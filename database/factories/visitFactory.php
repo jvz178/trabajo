@@ -11,5 +11,7 @@ $factory->define(App\visit::class, function (Faker $faker) {
         'kms' => $faker->number_format,
         'accepted' => $faker-> boolean,
         'deleted' => $faker-> boolean
+
+        //Hola 
     ];
 });
