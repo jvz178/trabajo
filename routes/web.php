@@ -15,9 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/empresas', function (){
-    return view('empresas.index');
-});
+Route::resource('enterprises', 'EnterpriseController');
 
 Auth::routes();
 
