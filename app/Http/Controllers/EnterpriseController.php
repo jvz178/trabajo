@@ -21,4 +21,11 @@ class EnterpriseController extends Controller
 
         return view('enterprises.edit');
     }
+
+    public function store(Request $request){
+
+        $enterpriseData=request()->all();
+
+        return response()->json($enterpriseData);
+    }
 }
