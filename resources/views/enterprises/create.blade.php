@@ -1,4 +1,4 @@
-<form action="{{ url('/enterprises')}}" method="post">
+<form action="{{ url('/enterprises')}}" method="post" enctype="multipart/form-data">
 {{ csrf_field() }}
 
 <label for="Titulo">Crear empresa</label>

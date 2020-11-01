@@ -25,7 +25,7 @@ class EnterpriseController extends Controller
     public function store(Request $request){
 
         $enterpriseData=request()->except('_token');
-        enterprises::insert($enterpriseData);
+        Enterprises::insert($enterpriseData);
         return response()->json($enterpriseData);
     }
 }
