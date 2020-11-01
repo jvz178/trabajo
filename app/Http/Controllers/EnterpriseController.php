@@ -26,6 +26,8 @@ class EnterpriseController extends Controller
 
         $enterpriseData=request()->all();
 
+        //enterprises::insert($enterpriseData);
+
         return response()->json($enterpriseData);
     }
 }
