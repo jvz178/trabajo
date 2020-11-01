@@ -4,16 +4,16 @@
 <label for="Titulo">Crear empresa</label>
 <br/>
 <br/>
-<label for="Nombre">Nombre: </label>
-<input type="text" name="Nombre" id="Nombre" value="">
+<label for="name">Nombre: </label>
+<input type="string" name="name" id="name" value="">
 <br/>
 <br/>
-<label for="Email">Email: </label>
-<input type="email" name="Email" id="Email" value="">
+<label for="email">Email: </label>
+<input type="string" name="email" id="email" value="">
 <br/>
 <br/>
-<label for="Borrado">Borrado: </label>
-<input type="boolean" name="Borrado" id="Borrado" value="">
+<label for="deleted">Borrado: </label>
+<input type="boolean" name="deleted" id="deleted" value="">
 <br/>
 <br/>
 <input type="submit" value="Crear">
