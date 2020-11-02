@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\enterprise;
 use Illuminate\Http\Request;
 
 class EnterpriseController extends Controller
@@ -25,7 +26,7 @@ class EnterpriseController extends Controller
     public function store(Request $request){
 
         $enterpriseData=request()->except('_token');
-        Enterprises::insert($enterpriseData);
+        enterprise::insert($enterpriseData);
         return response()->json($enterpriseData);
     }
 }
