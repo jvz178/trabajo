@@ -1,4 +1,4 @@
-Inicio alumnos
+INICIO ALUMNOS
 
 <table class= "table table-light">
     
