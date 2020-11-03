@@ -10,7 +10,8 @@ class EnterpriseController extends Controller
     
     public function index(){
 
-        return view('enterprises.index');
+        $data['enterprises']=enterprise::paginate(5);
+        return view('enterprises.index',$data);
     }
 
     public function create(){
