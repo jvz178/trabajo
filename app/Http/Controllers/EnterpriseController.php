@@ -19,9 +19,11 @@ class EnterpriseController extends Controller
         return view('enterprises.create');
     }
 
-    public function edit(){
+    public function edit($id){
 
-        return view('enterprises.edit');
+        $enterprise= Enterprise::findOrFail($id);
+        //return response()->json($enterprise);
+        return view('enterprises.edit', compact('enterprise'));
     }
 
     public function store(Request $request){
