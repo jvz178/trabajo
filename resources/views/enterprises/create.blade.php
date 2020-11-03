@@ -10,11 +10,5 @@
 <br/>
 <label for="email">Email: </label>
 <input type="email" name="email" id="email" value="">
-<br/>
-<br/>
-<label for="deleted">Borrado: </label>
-<input type="boolean" name="deleted" id="deleted" value="">
-<br/>
-<br/>
 <input type="submit" value="Crear">
 </form>
