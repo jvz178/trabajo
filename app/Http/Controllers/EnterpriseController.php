@@ -30,4 +30,10 @@ class EnterpriseController extends Controller
         enterprise::insert($enterpriseData);
         return response()->json($enterpriseData);
     }
+
+    public function destroy($id){
+
+        Enterprise::destroy($id);
+        return redirect('enterprises');
+    }
 }
