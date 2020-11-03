@@ -9,7 +9,9 @@ class StudentController extends Controller
 {
     
 public function index(){
-    return view('student.index');
+    
+    $datos['student']=Student::paginate(5);
+    return view('student.index', $datos);
 }
 
 public function create(){
@@ -28,13 +30,21 @@ public function store(Request $request){
 public function show(Student $student){
     //
 }
-public function edit(Student $student){
+public function edit($id){
+
+    $student=Student::findOrFail($id);
+    return view('student.edit', compact('student'));
     //
 }
-public function update(Request $request, Student $student){
-    //
-
-}public function setroy(Student $student){
-    //
+public function update(Request $request, $id){
+    
+    $datosStudent=request()->except(['_token', '_method']);
+    Student::where('id', '=', $id)->update($datosStudent);
+    $student=Student::findOrFail($id);
+    return view('student.edit', compact('student'));
+}
+public function destroy($id){
+    Student::destroy($id);
+    return redirect('student');
 }
 }

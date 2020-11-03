@@ -9,9 +9,7 @@ Crear alumno
     <label for="firstname">{{'Apellido'}}</label>
     <input type="text" name="firstname" id="firstname" value="">
     <br/>
-    <label for="deleted">Borrado: </label>
-    <input type="boolean" name="deleted" id="deleted" value="">
-    <br/>
+    
     <input type="submit" value="Crear">
 
 </form>
