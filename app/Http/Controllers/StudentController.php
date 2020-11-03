@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\student;
 
-class Student extends Controller
+class StudentController extends Controller
 {
     
 public function index(){
@@ -21,7 +21,7 @@ public function store(Request $request){
     // $datosStudent=request()->all();
 
      $datosStudent=request()->except('_token');
-    //  students::insert($datosStudent);
+      student::insert($datosStudent);
      return response()->json($datosStudent);
 }
 
