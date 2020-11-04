@@ -1,6 +1,15 @@
-INICIO ALUMNOS
+@extends('layouts.app')
 
-<table class= "table table-light">
+@section('content')
+<div class="container">
+
+
+
+<a href="{{ url('student/create')}}"class="btn btn-success">Añadir alumno</a>
+<br/>
+<br/>
+
+<table class= "table table-light table-hover">
     
     <thead class="thead-light">
         <tr>
@@ -17,17 +26,19 @@ INICIO ALUMNOS
         <td>{{$student->firstname}}</td>
         <td> 
           
-        <a href="{{url('/student/'.$student->id.'/edit')}}" >
+        <a class="btn btn-warning" href="{{url('/student/'.$student->id.'/edit')}}" >
             Editar 
         </a>
         
-        <form method="post" action="{{url('/student/'.$student->id)}}">
+        <form method="post" action="{{url('/student/'.$student->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
-        <button type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>
+        <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>
         </form>
         </td>
         </tr>
     @endforeach
     </body>
 </table>
+</div>
+@endsection

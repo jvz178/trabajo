@@ -1,15 +1,26 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+
+@if(count($errors)>0)
+
+<div class="alert alert-danger" role="alert">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 Crear alumno
-<form action="{{url('/student')}}" method="post">
+<form action="{{url('/student')}}" class="form-horizontal" method="post">
     {{ csrf_field() }}
 
-    <label for="name">Nombre: </label>
-    <input type="text" name="name" id="name" value="">
-    <br/>
-     
-    <label for="firstname">{{'Apellido'}}</label>
-    <input type="text" name="firstname" id="firstname" value="">
-    <br/>
-    
-    <input type="submit" value="Crear">
+    @include('student.form',['Modo'=>'create'])
 
 </form>
+</div>
+
+@endsection

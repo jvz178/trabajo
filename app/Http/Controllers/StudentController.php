@@ -20,6 +20,12 @@ public function create(){
 
 public function store(Request $request){
     
+    $campos=[
+        'name'=>'required|string|max:20',
+        'firstname'=>'required|string|max:50'
+    ];
+    $Mensaje=["required"=>'El :attribute es requerido'];
+    $this->validate($request,$campos,$Mensaje);
     // $datosStudent=request()->all();
 
      $datosStudent=request()->except('_token');

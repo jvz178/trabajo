@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::resource('enterprises', 'EnterpriseController');
@@ -20,8 +20,5 @@ Route::resource('enterprises', 'EnterpriseController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/student', 'StudentController@index');
-// Route::get('/student/create', 'StudentController@create');
 
 Route::resource('student', 'StudentController');
