@@ -22,7 +22,6 @@ class EnterpriseController extends Controller
     public function edit($id){
 
         $enterprise= Enterprise::findOrFail($id);
-        //return response()->json($enterprise);
         return view('enterprises.edit', compact('enterprise'));
     }
 
@@ -36,6 +35,14 @@ class EnterpriseController extends Controller
     public function destroy($id){
 
         Enterprise::destroy($id);
+        return redirect('enterprises');
+    }
+
+    public function update(Request $request, $id){
+
+        $enterpriseData=request()->except(['_token','_method']);
+        Enterprise::where('id','=', $id)->update($enterpriseData);
+        //$enterprise= Enterprise::findOrFail($id);
         return redirect('enterprises');
     }
 }

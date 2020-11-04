@@ -30,3 +30,6 @@
 @endforeach
 </tbody>
 </table>
+<a href>
+<button type="submit">Crear</button>
+</a>
