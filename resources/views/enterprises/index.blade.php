@@ -17,14 +17,14 @@
 <td>{{$enterprise->deleted}}</td>
 <td>
 
-<form method="post" action="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">
-{{csrf_field()}}
-<button type="submit">Editar</button>
+<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">
+<button type="submit"> Editar </button>
+</a>
 
 <form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}">
 {{csrf_field()}}
 {{method_field('DELETE')}}
-<button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');">Borrar</button>
+<button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');"> Borrar </button>
 </td>
 </tr>
 @endforeach
