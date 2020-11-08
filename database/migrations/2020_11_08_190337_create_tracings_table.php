@@ -15,6 +15,12 @@ class CreateTracingsTable extends Migration
     {
         Schema::create('tracings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type');
+            $table->string('reason');
+            $table->string('observation');
+            $table->unsignedInteger('tutor_c_id');
+            $table->foreign('tutor_c_id')->references('id')->on('users');
+            $table->boolean('deleted');
             $table->timestamps();
         });
     }
