@@ -29,7 +29,7 @@ class EnterpriseController extends Controller
 
         $enterpriseData=request()->except('_token');
         enterprise::insert($enterpriseData);
-        return response()->json($enterpriseData);
+        return redirect('enterprises');
     }
 
     public function destroy($id){
