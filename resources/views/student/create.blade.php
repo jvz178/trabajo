@@ -14,12 +14,13 @@
 </div>
 @endif
 
-Crear alumno
 <form action="{{url('/student')}}" class="form-horizontal" method="post">
     {{ csrf_field() }}
 
     @include('student.form',['Modo'=>'create'])
 
+
+    
 </form>
 </div>
 
