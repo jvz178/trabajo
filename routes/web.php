@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('enterprises', 'EnterpriseController');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('student', 'StudentController');
+Route::resource('users', 'UserController');
+
+Route::resource('enterprises', 'EnterpriseController');
+
+Route::resource('users', 'UserController');
