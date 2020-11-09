@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTutorEsTable extends Migration
+class CreateTracingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateTutorEsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tutor_es', function (Blueprint $table) {
-            $table->engine = ("InnoDB"); 
+        Schema::create('tracings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('firstname');
-            $table->string('email');
-            $table->string('phone');
-            $table->unsignedInteger('enterprise_id');
-            $table->foreign('enterprise_id')->references('id')->on('enterprises');    
+            $table->string('type');
+            $table->string('reason');
+            $table->string('observation');
+            $table->unsignedInteger('tutor_c_id');
+            $table->foreign('tutor_c_id')->references('id')->on('users');
             $table->boolean('deleted');
             $table->timestamps();
         });
@@ -34,6 +32,6 @@ class CreateTutorEsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutor_es');
+        Schema::dropIfExists('tracings');
     }
 }

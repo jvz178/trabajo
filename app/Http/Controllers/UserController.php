@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\enterprise;
+use App\users;
 use Illuminate\Http\Request;
 
-class EnterpriseController extends Controller
+class UserController extends Controller
 {
     
     public function index(){
 
-        $data['enterprises']=enterprise::paginate(5);
+        $data['users']=enterprise::paginate(5);
         return view('enterprises.index',$data);
     }
 

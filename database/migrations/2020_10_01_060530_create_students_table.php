@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('firstname');
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }
