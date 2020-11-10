@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::resource('cycles', 'CycleController');
 
+Route::resource('enterprises', 'EnterpriseController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
