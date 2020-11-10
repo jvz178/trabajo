@@ -1,19 +1,20 @@
     {{$Modo=='create' ? 'Añadir usuario':'Modificar usuario'}}
     
     <div class="form-group">
-    <label for="name" class="control-label">Name: </label>
-    <input type="text" class="form-control {{$errors->has('Nombre')?'is-invalid':''}} " name="name" id="name" 
-    value="{{ isset($users->name)?$users->name:old('Nombre')}}">
-    {!! $errors->first('Nombre','<div class="invalid-feedback">:message</div>')!!}
+        <label for="name" class="control-label">Name: </label>
+        <input type="text" class="form-control {{$errors->has('Nombre')?'is-invalid':''}} " name="name" id="name" 
+        value="{{ isset($users->name)?$users->name:old('Nombre')}}">
+        {!! $errors->first('Nombre','<div class="invalid-feedback">:message</div>')!!}
     </div>
      
     <div class="form-group">
-    <label for="firstname">{{'Firstname: '}}</label>
-    <input type="text" class="form-control {{$errors->has('firstname')?'is-invalid':''}} "name="firstname" id="firstname" 
-    value="{{ isset($users->firstname)?$users->firstname:old('firstname')}}">
-    {!! $errors->first('firstname','<div class="invalid-feedback">:message</div>')!!}
-    
+        <label for="firstname">{{'Firstname: '}}</label>
+        <input type="text" class="form-control {{$errors->has('firstname')?'is-invalid':''}} "name="firstname" id="firstname" 
+        value="{{ isset($users->firstname)?$users->firstname:old('firstname')}}">
+        {!! $errors->first('firstname','<div class="invalid-feedback">:message</div>')!!}
     </div>
+
+
 
     <div class="form-group">
         <label for="phone" class="control-label">Phone: </label>
@@ -37,26 +38,34 @@
     </div>
 
     <div class="form-group">
-        <label for="email_verified_at" class="control-label">email_verified_at: </label>
+        <label for="email_verified_at" class="control-label">Verifica email: </label>
         <input type="text" class="form-control {{$errors->has('email_verified_at')?'is-invalid':''}} " email_verified_at="name" id="name" 
         value="{{ isset($users->email_verified_at)?$users->email_verified_at:old('email_verified_at')}}">
         {!! $errors->first('email_verified_at','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
-    <div class="">
-        <label for="firstname">{{'Firstname: '}}</label>
-        <input type="text" class="form-control {{$errors->has('firstname')?'is-invalid':''}} "name="firstname" id="firstname" 
-        value="{{ isset($users->firstname)?$users->firstname:old('firstname')}}">
-        {!! $errors->first('firstname','<div class="invalid-feedback">:message</div>')!!}
+    <div class="form-group">
+        <label for="enterprise_id">{{'Empresa: '}}</label>
+        <input type="text" class="form-control {{$errors->has('enterprise_id')?'is-invalid':''}} "name="enterprise_id" id="enterprise_id" 
+        value="{{ isset($users->enterprise_id)?$users->enterprise_id:old('enterprise_id')}}">
+        {!! $errors->first('enterprise_id','<div class="invalid-feedback">:message</div>')!!}
         
     </div>
 
-    <div class="">
-        <label for="firstname">{{'Firstname: '}}</label>
-        <input type="text" class="form-control {{$errors->has('firstname')?'is-invalid':''}} "name="firstname" id="firstname" 
-        value="{{ isset($users->firstname)?$users->firstname:old('firstname')}}">
-        {!! $errors->first('firstname','<div class="invalid-feedback">:message</div>')!!}
+    <div class="form-group">
+        <label for="cicle_id">{{'Ciclo: '}}</label>
+        <input type="text" class="form-control {{$errors->has('cicle_id')?'is-invalid':''}} "name="cicle_id" id="cicle_id" 
+        value="{{ isset($users->cicle_id)?$users->cicle_id:old('cicle_id')}}">
+        {!! $errors->first('cicle_id','<div class="invalid-feedback">:message</div>')!!}
         
+    </div>
+
+    <div class="form-group">
+        <label for="type">{{'Tipo: '}}</label>
+        <input type="text" class="form-control {{$errors->has('type')?'is-invalid':''}} "name="type" id="type" 
+        value="{{ isset($users->type)?$users->type:old('type')}}">
+        {!! $errors->first('type','<div class="invalid-feedback">:message</div>')!!}
+    
     </div>
 
 

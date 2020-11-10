@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 
 @extends('layouts.app')
@@ -12,7 +11,7 @@
 }}
 @endif
 
-<a href="{{ url('users/create')}}"class="btn btn-success">Añadir alumno</a>
+<a href="{{ url('users/create')}}"class="btn btn-success">Añadir usuario</a>
 <br/>
 <br/>
 
@@ -22,6 +21,10 @@
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Contraseña</th>
+            <th>Email</th>
+            <th>Verifica Email</th>
         </tr>
     </thead>
 
@@ -53,6 +56,4 @@
 </table>
 </div>
 @endsection
-=======
-Index
->>>>>>> 0fb5282f6a96878d5e46fb3ccfad53724ce8e04d
+

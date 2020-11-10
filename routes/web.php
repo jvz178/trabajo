@@ -22,10 +22,3 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
-<<<<<<< HEAD
-=======
-
-Route::resource('enterprises', 'EnterpriseController');
-
-Route::resource('users', 'UserController');
->>>>>>> 0fb5282f6a96878d5e46fb3ccfad53724ce8e04d
