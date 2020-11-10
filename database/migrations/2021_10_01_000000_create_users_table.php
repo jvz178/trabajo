@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('phone');
             $table->string('email')->unique();
-<<<<<<< HEAD:database/migrations/2021_10_01_000000_create_users_table.php
             $table->string('email_verified_at');
             $table->string('password');
             $table->string('type')->default('al');
@@ -29,16 +28,6 @@ class CreateUsersTable extends Migration
             $table->foreign('cycle_id')->references('id')->on('cycles');
             $table->rememberToken();
             $table->boolean('deleted')->default(false);
-=======
-            $table->string('email_verified_at')->unique();
-            $table->string('password');
-            $table->string('type');
-            $table->unsignedInteger('enterprise_id');
-            $table->foreign('enterprise_id')->references('id')->on('enterprises');
-            $table->foreign('cycle_id')->references('id')->on('cycles');
-            $table->rememberToken();
-            $table->boolean('deleted')->default(0);
->>>>>>> 0fb5282f6a96878d5e46fb3ccfad53724ce8e04d:database/migrations/2020_10_16_000000_create_users_table.php
             $table->timestamps();
         });
     }
