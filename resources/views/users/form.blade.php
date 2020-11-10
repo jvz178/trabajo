@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="email" class="control-label">Email: </label>
         <input type="text" class="form-control {{$errors->has('Email')?'is-invalid':''}} " email="name" id="name" 
-        value="{{ isset($users->name)?$users->name:old('Email')}}">
+        value="{{ isset($users->name)?$users->email:old('Email')}}">
         {!! $errors->first('Email','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
