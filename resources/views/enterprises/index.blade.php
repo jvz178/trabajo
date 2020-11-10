@@ -30,6 +30,6 @@
 @endforeach
 </tbody>
 </table>
-<a href>
+<a href="{{ url('enterprises/create')}}">
 <button type="submit">Crear</button>
 </a>

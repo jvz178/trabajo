@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\user;
+=======
+use App\users;
+use Illuminate\Http\Request;
+>>>>>>> 0fb5282f6a96878d5e46fb3ccfad53724ce8e04d
 
 class UserController extends Controller
 {
     
+<<<<<<< HEAD
 public function index(){
     
     $datos['users']=user::paginate(5);
@@ -63,4 +69,43 @@ public function destroy($id){
     User::destroy($id);
     return redirect('users')->with('Mensaje', 'Usuario eliminado');
 }
+=======
+    public function index(){
+
+        $data['users']=enterprise::paginate(5);
+        return view('enterprises.index',$data);
+    }
+
+    public function create(){
+
+        return view('enterprises.create');
+    }
+
+    public function edit($id){
+
+        $enterprise= Enterprise::findOrFail($id);
+        return view('enterprises.edit', compact('enterprise'));
+    }
+
+    public function store(Request $request){
+
+        $enterpriseData=request()->except('_token');
+        enterprise::insert($enterpriseData);
+        return redirect('enterprises');
+    }
+
+    public function destroy($id){
+
+        Enterprise::destroy($id);
+        return redirect('enterprises');
+    }
+
+    public function update(Request $request, $id){
+
+        $enterpriseData=request()->except(['_token','_method']);
+        Enterprise::where('id','=', $id)->update($enterpriseData);
+        //$enterprise= Enterprise::findOrFail($id);
+        return redirect('enterprises');
+    }
+>>>>>>> 0fb5282f6a96878d5e46fb3ccfad53724ce8e04d
 }
