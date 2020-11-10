@@ -15,10 +15,16 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
+
 Route::resource('cycles', 'CycleController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::resource('users', 'UserController');
+
+
+
