@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('phone');
             $table->string('email')->unique();
-<<<<<<< HEAD:database/migrations/2021_10_01_000000_create_users_table.php
             $table->string('email_verified_at');
             $table->string('password');
             $table->string('type')->default('al');
