@@ -14,10 +14,10 @@
 </div>
 @endif
 
-<form action="{{url('/student')}}" class="form-horizontal" method="post">
+<form action="{{url('/users')}}" class="form-horizontal" method="post">
     {{ csrf_field() }}
 
-    @include('student.form',['Modo'=>'create'])
+    @include('users.form',['Modo'=>'create'])
 
 
     

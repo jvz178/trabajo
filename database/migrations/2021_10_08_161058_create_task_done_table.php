@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWorksheetsTable extends Migration
+class CreateTaskDoneTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateWorksheetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('worksheets', function (Blueprint $table) {
+        Schema::create('task_done', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->date('date');
-            $table->string('description');
             $table->unsignedInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->boolean('accepted');
-            $table->boolean('deleted');
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->unsignedInteger('task_id');
+            $table->foreign('task_id')->references('id')->on('tasks');
+            $table->integer('mark');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateWorksheetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('worksheets');
+        Schema::dropIfExists('task_done');
     }
 }

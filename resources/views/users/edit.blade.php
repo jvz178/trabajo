@@ -3,11 +3,11 @@
 @section('content')
 <div class="container">
 
-<form action="{{ url('/student/'.$student->id)}}" method="post">
+<form action="{{ url('/users/'.$users->id)}}" method="post">
 {{csrf_field()}}
 {{method_field('PATCH')}}
 
-@include('student.form',['Modo'=>'edit'])
+@include('users.form',['Modo'=>'edit'])
 
 </form>
 </div>

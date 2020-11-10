@@ -11,7 +11,7 @@
 }}
 @endif
 
-<a href="{{ url('student/create')}}"class="btn btn-success">Añadir alumno</a>
+<a href="{{ url('users/create')}}"class="btn btn-success">Añadir alumno</a>
 <br/>
 <br/>
 
@@ -25,18 +25,22 @@
     </thead>
 
     <body>
-    @foreach ($student as $student)
+    @foreach ($users as $users)
         <tr>
         <td>{{$loop->iteration}}</td>
-        <td>{{$student->name}}</td>
-        <td>{{$student->firstname}}</td>
+        <td>{{$users->name}}</td>
+        <td>{{$users->firstname}}</td>
+        <td>{{$users->phone}}</td>
+        <td>{{$users->password}}</td>
+        <td>{{$users->email}}</td>
+        <td>{{$users->email_verified_at}}</td>
         <td> 
           
-        <a class="btn btn-warning" href="{{url('/student/'.$student->id.'/edit')}}" >
+        <a class="btn btn-warning" href="{{url('/users/'.$users->id.'/edit')}}" >
             Editar 
         </a>
         
-        <form method="post" action="{{url('/student/'.$student->id)}}" style="display:inline">
+        <form method="post" action="{{url('/users/'.$users->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
         <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>

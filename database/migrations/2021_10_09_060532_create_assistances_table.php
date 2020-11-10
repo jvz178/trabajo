@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudysTable extends Migration
+class CreateAssistancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateStudysTable extends Migration
      */
     public function up()
     {
-        Schema::create('studys', function (Blueprint $table) {
+        Schema::create('assistances', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->unsignedInteger('cycle_id');
-            $table->foreign('cycle_id')->references('id')->on('cycles');
-            $table->boolean('deleted');
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->date('date');
+            $table->string('assistance');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateStudysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('studys');
+        Schema::dropIfExists('assistances');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBelongsTable extends Migration
+class CreateWorksheetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateBelongsTable extends Migration
      */
     public function up()
     {
-        Schema::create('belongs', function (Blueprint $table) {
-            $table->engine='InnoDB';
+        Schema::create('worksheets', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->date('date');
+            $table->string('description');
             $table->unsignedInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
-            $table->unsignedInteger('enterprise_id');
-            $table->foreign('enterprise_id')->references('id')->on('enterprises');
-            $table->boolean('deleted');
+            $table->foreign('student_id')->references('id')->on('users');
+            $table->boolean('accepted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateBelongsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('belongs');
+        Schema::dropIfExists('worksheets');
     }
 }
