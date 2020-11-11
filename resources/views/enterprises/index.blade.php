@@ -31,5 +31,5 @@
 </tbody>
 </table>
 <a href="{{ url('enterprises/create')}}">
-<button type="submit">Crear</button>
+Crear
 </a>

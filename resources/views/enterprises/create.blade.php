@@ -13,4 +13,7 @@
 <br/>
 <br/>
 <input type="submit" value="Crear">
+<a href="{{ url('enterprises')}}">
+<button>Volver</button>
+</a>
 </form>
