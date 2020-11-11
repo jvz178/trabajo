@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
 <table class="table table-light">
 <thread class="thread-light">
 <tr>
@@ -31,3 +36,5 @@
 <a href="{{ url('enterprises/create')}}">
 Crear
 </a>
+</div>
+@endsection
