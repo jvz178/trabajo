@@ -9,5 +9,6 @@ $factory->define(App\visit::class, function (Faker $faker) {
         'enterprise_id' =>\App\enterprise::all()->random()->id,
         'date' => $faker->dateTime($max = 'now', $timezone = null),
         'kms' => $faker->number_format
+        'deleted' => $faker->boolean = false,
     ];
 });

@@ -19,10 +19,11 @@
     
     <thead class="thead-light">
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Firstname</th>
             <th>Phone</th>
-            <th>Password</th>
+            
             <th>Email</th>
             <th>Email verified</th>
             <th>Enterprise</th>
@@ -33,19 +34,22 @@
 
     <body>
     @foreach ($users as $users)
-        <tr>
+        <tr></tr>
         <td>{{$loop->iteration}}</td>
+        
         <td>{{$users->name}}</td>
         <td>{{$users->firstname}}</td>
         <td>{{$users->phone}}</td>
-        <td>{{$users->password}}</td>
+      
         <td>{{$users->email}}</td>
         <td>{{$users->email_verified_at}}</td>
         <td>{{$users->enterprise_id}}</td>
         <td>{{$users->cycle_id}}</td>
-        <td>{{$users->type}}
+        <td>{{$users->type}}</td>
         
-          
+            
+
+        <td>
         <a class="btn btn-warning" href="{{url('/users/'.$users->id.'/edit')}}" >
             Edit 
         </a>
