@@ -24,7 +24,7 @@ public function store(Request $request){
          'name'=>'required|string|max:20',
          'firstname'=>'required|string|max:50',
          'phone'=>'required|string|max:20',
-         'email'=>'unique|string|max:50',
+         'email'=>'required|string|max:50',
          'email_verified_at'=>'required|string|max:50',
          'password'=>'required|string|max:10',
          'type'=>'required|string|max:50',
@@ -37,7 +37,7 @@ public function store(Request $request){
      $datosUsers=request()->except('_token');
       user::insert($datosUsers);
       //return response()->json($enterpriseData);
-     return redirect('users')->with('Mensaje', 'Alumno añadido');
+     return redirect('users')->with('Mensaje', 'Usuario creado');
 }
 
 public function show(users $users){
@@ -46,7 +46,7 @@ public function show(users $users){
 public function edit($id){
 
     $users=User::findOrFail($id);
-    return view('users.edit', compact('user'));
+    return view('users.edit', compact('users'));
     //
 }
 public function update(Request $request, $id){

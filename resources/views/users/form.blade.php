@@ -1,10 +1,10 @@
-    {{$Modo=='create' ? 'Añadir usuario':'Modificar usuario'}}
+    {{$Modo=='create' ? 'New user':'Modify user'}}
     
     <div class="form-group">
-        <label for="name" class="control-label">Name: </label>
+        <label for="name">Name: </label>
         <input type="text" class="form-control {{$errors->has('Nombre')?'is-invalid':''}} " name="name" id="name" 
         value="{{ isset($users->name)?$users->name:old('Nombre')}}">
-        {!! $errors->first('Nombre','<div class="invalid-feedback">:message</div>')!!}
+        {!! $errors->first('name','<div class="invalid-feedback">:message</div>')!!}
     </div>
      
     <div class="form-group">
@@ -27,25 +27,31 @@
         <label for="password" class="control-label">Password: </label>
         <input type="text" class="form-control {{$errors->has('Password')?'is-invalid':''}} " name="password" id="password" 
         value="{{ isset($users->password)?$users->password:old('Password')}}">
-        {!! $errors->first('Password','<div class="invalid-feedback">:message</div>')!!}
+        {!! $errors->first('password','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
     <div class="form-group">
         <label for="email" class="control-label">Email: </label>
+<<<<<<< HEAD
+        <input type="text" class="form-control {{$errors->has('Email')?'is-invalid':''}} " name="email" id="email" 
+        value="{{ isset($users->email)?$users->email:old('Email')}}">
+        {!! $errors->first('email','<div class="invalid-feedback">:message</div>')!!}
+=======
         <input type="text" class="form-control {{$errors->has('Email')?'is-invalid':''}} " email="name" id="name" 
         value="{{ isset($users->email)?$users->email:old('Email')}}">
         {!! $errors->first('Email','<div class="invalid-feedback">:message</div>')!!}
+>>>>>>> 7a04ebcbe23a9f2c686cf58a69383db396aacb65
     </div>
 
     <div class="form-group">
-        <label for="email_verified_at" class="control-label">Verifica email: </label>
-        <input type="text" class="form-control {{$errors->has('email_verified_at')?'is-invalid':''}} " email_verified_at="name" id="name" 
+        <label for="email_verified_at" class="control-label">Email verified: </label>
+        <input type="text" class="form-control {{$errors->has('Email verified')?'is-invalid':''}} "name= "email_verified_at" id="email_verified_at" 
         value="{{ isset($users->email_verified_at)?$users->email_verified_at:old('email_verified_at')}}">
         {!! $errors->first('email_verified_at','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
     <div class="form-group">
-        <label for="enterprise_id">{{'Empresa: '}}</label>
+        <label for="enterprise_id">{{'Enterprise: '}}</label>
         <input type="text" class="form-control {{$errors->has('enterprise_id')?'is-invalid':''}} "name="enterprise_id" id="enterprise_id" 
         value="{{ isset($users->enterprise_id)?$users->enterprise_id:old('enterprise_id')}}">
         {!! $errors->first('enterprise_id','<div class="invalid-feedback">:message</div>')!!}
@@ -53,15 +59,15 @@
     </div>
 
     <div class="form-group">
-        <label for="cicle_id">{{'Ciclo: '}}</label>
-        <input type="text" class="form-control {{$errors->has('cicle_id')?'is-invalid':''}} "name="cicle_id" id="cicle_id" 
-        value="{{ isset($users->cicle_id)?$users->cicle_id:old('cicle_id')}}">
-        {!! $errors->first('cicle_id','<div class="invalid-feedback">:message</div>')!!}
+        <label for="cycle_id">{{'Cycle: '}}</label>
+        <input type="text" class="form-control {{$errors->has('cycle_id')?'is-invalid':''}} "name="cycle_id" id="cycle_id" 
+        value="{{ isset($users->cycle_id)?$users->cicle_id:old('cycle_id')}}">
+        {!! $errors->first('cycle_id','<div class="invalid-feedback">:message</div>')!!}
         
     </div>
 
     <div class="form-group">
-        <label for="type">{{'Tipo: '}}</label>
+        <label for="type">{{'Type: '}}</label>
         <input type="text" class="form-control {{$errors->has('type')?'is-invalid':''}} "name="type" id="type" 
         value="{{ isset($users->type)?$users->type:old('type')}}">
         {!! $errors->first('type','<div class="invalid-feedback">:message</div>')!!}
@@ -70,5 +76,5 @@
 
 
     
-    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Crear usuario':'Modificar users'}}">
-    <a class="btn btn-primary" href="{{url('users')}}">Volver</a>
+    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'New user':'Modify user'}}">
+    <a class="btn btn-primary" href="{{url('users')}}">Back</a>
