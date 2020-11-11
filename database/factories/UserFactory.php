@@ -25,5 +25,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'enterprise_id'=>\App\enterprise::all()->random()->id,
         'cycle_id'=>\App\cycle::all()->random()->id,
         'remember_token' => str_random(10),
+        'deleted' => $faker->boolean,
     ];
 });
