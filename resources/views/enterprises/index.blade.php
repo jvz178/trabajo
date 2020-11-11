@@ -17,9 +17,7 @@
 <td>{{$enterprise->deleted}}</td>
 <td>
 
-<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">
-<button type="submit"> Editar </button>
-</a>
+<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">Editar</a>
 
 <form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}">
 {{csrf_field()}}
