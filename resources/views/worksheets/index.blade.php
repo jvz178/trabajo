@@ -31,6 +31,7 @@
 {{csrf_field()}}
 {{method_field('DELETE')}}
 <button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');"> Borrar </button>
+</form>
 </td>
 </tr>
 @endforeach

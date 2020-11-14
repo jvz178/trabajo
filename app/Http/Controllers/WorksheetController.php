@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\worksheet;
 use Illuminate\Http\Request;
+use App\worksheet;
 
 class WorksheetController extends Controller
 {
@@ -33,7 +33,7 @@ class WorksheetController extends Controller
 
     public function destroy($id){
 
-        Worksheet::destroy($id);
+        worksheet::destroy($id);
         return redirect('worksheets');
     }
 
