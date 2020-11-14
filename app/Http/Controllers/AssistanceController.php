@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\assistance;
 use Illuminate\Http\Request;
+use App\assistance;
 
 class AssitanceController extends Controller
 {
