@@ -25,9 +25,9 @@
 <td>{{$worksheet->deleted}}</td>
 <td>
 
-<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">Editar</a>
+<a href="{{ url('/worksheets/'.$worksheet->id.'/edit')}}">Editar</a>
 
-<form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}">
+<form method="post" action="{{ url('/worksheets/'.$worksheet->id)}}">
 {{csrf_field()}}
 {{method_field('DELETE')}}
 <button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');"> Borrar </button>
@@ -36,7 +36,7 @@
 @endforeach
 </tbody>
 </table>
-<a href="{{ url('enterprises/create')}}">
+<a href="{{ url('worksheets/create')}}">
 Crear
 </a>
 </div>
