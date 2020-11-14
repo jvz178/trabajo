@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\assistance;
 
-class AssitanceController extends Controller
+class AssistanceController extends Controller
 {
     public function index(){
 
