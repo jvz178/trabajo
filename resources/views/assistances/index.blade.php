@@ -10,6 +10,7 @@
 <th>Id_estudiante</th>
 <th>Fecha</th>
 <th>Asistencia</th>
+<th>Aceptado</th>
 <th>Deleted</th>
 <th></th>
 </tr>
@@ -18,14 +19,16 @@
 @foreach($enterprises as $enterprise)
 <tr>
 <td>{{$loop->iteration}}</td>
-<td>{{$enterprise->name}}</td>
-<td>{{$enterprise->email}}</td>
+<td>{{$assistance->student_id}}</td>
+<td>{{$assistance->date}}</td>
+<td>{{$assistance->assistance}}</td>
+<td>{{$assistance->accepted}}</td>
 <td>{{$enterprise->deleted}}</td>
 <td>
 
-<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}">Editar</a>
+<a href="{{ url('/assistances/'.$assistance->id.'/edit')}}">Editar</a>
 
-<form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}">
+<form method="post" action="{{ url('/assistances/'.$assistance->id)}}">
 {{csrf_field()}}
 {{method_field('DELETE')}}
 <button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');"> Borrar </button>
@@ -35,7 +38,7 @@
 @endforeach
 </tbody>
 </table>
-<a href="{{ url('enterprises/create')}}">
+<a href="{{ url('assistances/create')}}">
 Crear
 </a>
 </div>
