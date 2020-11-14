@@ -22,5 +22,5 @@ Route::resource('enterprises', 'EnterpriseController');
 Route::resource('users', 'UserController');
 Auth::routes();
 
-Route::resource('fichas', 'FichaController');
+Route::resource('worksheets', 'WorksheetController');
 Route::get('/home', 'HomeController@index')->name('home');
