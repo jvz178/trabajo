@@ -33,7 +33,7 @@ class WorksheetController extends Controller
 
     public function destroy($id){
 
-        Enterprise::destroy($id);
+        Worksheet::destroy($id);
         return redirect('worksheets');
     }
 
