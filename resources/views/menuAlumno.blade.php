@@ -15,12 +15,6 @@
                 </a>
                 </div>
             </div>
-            <div class="panel panel-default">
-            <div class="panel-heading">Fichas de seguimiento</div>
-            <div class="panel-body">
-            @include('worksheets.index')
-            </div>
-            </div>
         </div>
     </div>
 </div>
