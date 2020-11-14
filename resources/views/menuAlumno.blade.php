@@ -3,15 +3,23 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class>
             <div class="panel panel-default">
-                <div class="panel-heading">Bienvenido alumno</div>
-
+                <div class="panel-heading">Bienvenido, alumno</div>
                 <div class="panel-body">
-                <a href="{{ url('worksheets/index')}}">
-                <button type="submit">Ficha de seguimiento</button>
+                <a href="{{ url('worksheets')}}">
+                <button>Ficha de seguimiento</button>
+                </a>
+                <a href="{{ url('assistances')}}">
+                <button>Asistencia</button>
                 </a>
                 </div>
+            </div>
+            <div class="panel panel-default">
+            <div class="panel-heading">Fichas de seguimiento</div>
+            <div class="panel-body">
+            @include('worksheets.index')
+            </div>
             </div>
         </div>
     </div>
