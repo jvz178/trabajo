@@ -16,7 +16,7 @@
 </tr>
 </thread>
 <tbody>
-@foreach($enterprises as $enterprise)
+@foreach($assistances as $assistance)
 <tr>
 <td>{{$loop->iteration}}</td>
 <td>{{$assistance->student_id}}</td>
