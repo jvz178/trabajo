@@ -24,4 +24,6 @@ Auth::routes();
 
 Route::resource('worksheets', 'WorksheetController');
 Route::resource('assistances', 'AssistanceController');
+Route::resource('menuAlumno', 'menuAlumnoController');
+
 Route::get('/home', 'HomeController@index')->name('home');
