@@ -10,7 +10,7 @@
 <th>Nombre</th>
 <th>Email</th>
 <th>Deleted</th>
-<th>Acciones</th>
+<th></th>
 </tr>
 </thread>
 <tbody>
