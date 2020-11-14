@@ -2,7 +2,7 @@
 <br/>
 <br/>
 <label for="id_student">Id_estudiante: </label>
-<input type="id" name="student_id" id="student_id" value="{{ isset($assistance->student_id)?$enterprise->student_id:''}}">
+<input type="id" name="student_id" id="student_id" value="{{ isset($assistance->student_id)?$assistance->student_id:''}}">
 <br/>
 <br/>
 <label for="date">Fecha: </label>

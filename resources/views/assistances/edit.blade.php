@@ -7,7 +7,7 @@
 {{csrf_field()}}
 {{method_field('PATCH')}}
 
-@include('enterprises.form',['Mode'=>'edit'])
+@include('assistances.form',['Mode'=>'edit'])
 </form>
 </div>
 @endsection

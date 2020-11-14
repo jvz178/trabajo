@@ -23,7 +23,7 @@
 <td>{{$assistance->date}}</td>
 <td>{{$assistance->assistance}}</td>
 <td>{{$assistance->accepted}}</td>
-<td>{{$enterprise->deleted}}</td>
+<td>{{$assistance->deleted}}</td>
 <td>
 
 <a href="{{ url('/assistances/'.$assistance->id.'/edit')}}">Editar</a>

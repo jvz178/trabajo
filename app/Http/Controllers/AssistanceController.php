@@ -15,7 +15,7 @@ class AssistanceController extends Controller
 
     public function create(){
 
-        return view('assistance.create');
+        return view('assistances.create');
     }
 
     public function edit($id){
