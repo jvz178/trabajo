@@ -33,28 +33,28 @@
     </thead>
 
     <body>
-    @foreach ($users as $users)
+    @foreach ($users as $user)
         <tr></tr>
         <td>{{$loop->iteration}}</td>
         
-        <td>{{$users->name}}</td>
-        <td>{{$users->firstname}}</td>
-        <td>{{$users->phone}}</td>
+        <td>{{$user->name}}</td>
+        <td>{{$user->firstname}}</td>
+        <td>{{$user->phone}}</td>
       
-        <td>{{$users->email}}</td>
-        <td>{{$users->email_verified_at}}</td>
-        <td>{{$users->enterprise_id}}</td>
-        <td>{{$users->cycle_id}}</td>
-        <td>{{$users->type}}</td>
+        <td>{{$user->email}}</td>
+        <td>{{$user->email_verified_at}}</td>
+        <td>{{$user->enterprise_id}}</td>
+        <td>{{$user->cycle_id}}</td>
+        <td>{{$user->type}}</td>
         
             
 
         <td>
-        <a class="btn btn-warning" href="{{url('/users/'.$users->id.'/edit')}}" >
+        <a class="btn btn-warning" href="{{url('/users/'.$user->id.'/edit')}}" >
             Edit 
         </a>
         
-        <form method="post" action="{{url('/users/'.$users->id)}}" style="display:inline">
+        <form method="post" action="{{url('/users/'.$user->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
         <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
@@ -64,5 +64,8 @@
     @endforeach
     </body>
 </table>
+
+{{ $users->links() }}
+
 </div>
 @endsection

@@ -24,20 +24,20 @@
     </thead>
 
     <body>
-    @foreach ($modules as $modules)
+    @foreach ($modules as $module)
         <tr></tr>
         <td>{{$loop->iteration}}</td>
         
-        <td>{{$users->name}}</td>
-        <td>{{$users->cycle_id}}</td>
+        <td>{{$module->name}}</td>
+        <td>{{$module->cycle_id}}</td>
     
         
         <td>
-        <a class="btn btn-warning" href="{{url('/modules/'.$modules->id.'/edit')}}" >
+        <a class="btn btn-warning" href="{{url('/modules/'.$module->id.'/edit')}}" >
             Edit 
         </a>
         
-        <form method="post" action="{{url('/modules/'.$modules->id)}}" style="display:inline">
+        <form method="post" action="{{url('/modules/'.$module->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
         <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
@@ -47,5 +47,8 @@
     @endforeach
     </body>
 </table>
+
+{{ $modules->links() }}
+
 </div>
 @endsection

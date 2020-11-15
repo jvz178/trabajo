@@ -24,18 +24,18 @@
     </thead>
 
     <body>
-    @foreach ($tasks as $tasks)
+    @foreach ($tasks as $task)
         <tr></tr>
         <td>{{$loop->iteration}}</td>
         
-        <td>{{$tasks->number}}</td>
-        <td>{{$tasks->description}}</td>
+        <td>{{$task->number}}</td>
+        <td>{{$task->description}}</td>
         <td>
-        <a class="btn btn-warning" href="{{url('/tasks/'.$tasks->id.'/edit')}}" >
+        <a class="btn btn-warning" href="{{url('/tasks/'.$task->id.'/edit')}}" >
             Edit 
         </a>
         
-        <form method="post" action="{{url('/tasks/'.$tasks->id)}}" style="display:inline">
+        <form method="post" action="{{url('/tasks/'.$task->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
         <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
@@ -45,5 +45,8 @@
     @endforeach
     </body>
 </table>
+
+{{ $tasks->links() }}
+
 </div>
 @endsection

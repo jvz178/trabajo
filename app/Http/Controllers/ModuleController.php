@@ -21,8 +21,12 @@ class ModuleController extends Controller
         
          $campos=[
              'name'=>'required|string|max:20',
-             'cycle_id'=>'required|string|4',
+              'cycle_id'=>'required|integer|max:4',
          ];
+
+
+          $Mensaje=["required"=>'The :attribute ir required'];
+         $this->validate($request,$campos,$Mensaje);
     
          $Mensaje=["required"=>'The :attribute is required'];
          $this->validate($request,$campos,$Mensaje);

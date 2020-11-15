@@ -20,7 +20,7 @@ class TaskController extends Controller
     public function store(Request $request){
         
          $campos=[
-             'number'=>'required|string|max:20',
+             'number'=>'required|integer|max:20',
              'description'=>'required|string|max:1000',
              
              
