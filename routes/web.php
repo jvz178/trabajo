@@ -26,4 +26,8 @@ Route::resource('worksheets', 'WorksheetController');
 Route::resource('assistances', 'AssistanceController');
 Route::resource('menuAlumno', 'menuAlumnoController');
 
+
+Route::resource('tasks', 'TaskController');
+Route::resource('modules', 'ModuleController');
+
 Route::get('/home', 'HomeController@index')->name('home');
