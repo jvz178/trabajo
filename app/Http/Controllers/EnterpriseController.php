@@ -27,15 +27,26 @@ class EnterpriseController extends Controller
 
     public function store(Request $request){
 
+        $data=[
+            'name'=>'required|string|max:100',
+            'email' => 'required|string|email|max:255|unique:users',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
         $enterpriseData=request()->except('_token');
+
         enterprise::insert($enterpriseData);
-        return redirect('enterprises');
+
+        return redirect('enterprises')->with('Message','Enterprise added');
     }
 
     public function destroy($id){
 
         Enterprise::destroy($id);
-        return redirect('enterprises');
+        return redirect('enterprises')->with('Message','Enterprise deleted');
     }
 
     public function update(Request $request, $id){
@@ -43,6 +54,19 @@ class EnterpriseController extends Controller
         $enterpriseData=request()->except(['_token','_method']);
         Enterprise::where('id','=', $id)->update($enterpriseData);
         //$enterprise= Enterprise::findOrFail($id);
-        return redirect('enterprises');
+
+        $data=[
+            'name'=>'required|string|max:100',
+            'email' => 'required|string|email|max:255|unique:users',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
+        $enterpriseData=request()->except(['_token','_method']); 
+
+        Enterprise::where('id','=',$id)->update($enterpriseData);
+        return redirect('enterprises')->with('Message','Enterprise modified');
     }
 }
