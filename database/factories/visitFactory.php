@@ -8,7 +8,7 @@ $factory->define(App\visit::class, function (Faker $faker) {
         'tutor_c_id' =>\App\user::all()->random()->id,
         'enterprise_id' =>\App\enterprise::all()->random()->id,
         'date' => $faker->dateTime($max = 'now', $timezone = null),
-        'kms' => $faker->number_format
+        'kms' => $faker->number_format,
         'deleted' => $faker->boolean = false,
     ];
 });

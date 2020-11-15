@@ -1,8 +1,21 @@
-Inicio (Despliegue de datos)
+@extends('layouts.app')
 
-<a href="{{ url('/cycles/create')}}">Add Student</a>
+@section('content')
 
-<table class="table table.light">
+<div class="container">
+
+@if(Session::has('Message'))
+
+<div class="alert alert-success" role="alert">
+{{  Session::get('Message')  }}
+</div>
+
+@endif
+
+<a href="{{ url('/cycles/create')}}" class="btn btn-success">Add Cycle</a>
+<br/><br/>
+
+<table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>
             <th>#</th>
@@ -19,18 +32,18 @@ Inicio (Despliegue de datos)
             <td>{{$cycle->grade}}</td>
             <td>{{$cycle->year}}</td>
             <td>
-                
-                <a href="{{ url('/cycles/' .$cycle->id. '/edit/') }}">
+
+                <a class="btn btn-warning" href="{{ url('/cycles/' .$cycle->id. '/edit/') }}">
                     Edit
                 </a>
-                
-            
+
+
                 | 
 
-                <form method="post" action="{{ url('/cycles/' .$cycle->id) }}">
+                <form method="post" action="{{ url('/cycles/' .$cycle->id) }}" style="display:inline">
                 {{csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" onclick="return confirm('Delete?');">Delete</button>
+                <button type="submit" onclick="return confirm('Delete?');" class="btn btn-danger">Delete</button>
 
                 </form>
 
@@ -39,3 +52,8 @@ Inicio (Despliegue de datos)
     @endforeach
     </tbody>
 </table>
+
+{{ $cycles->links() }}
+
+</div>
+@endsection

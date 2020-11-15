@@ -19,11 +19,21 @@ class CycleController extends Controller
 
     public function store(Request $request){
 
+        $data=[
+            'name'=>'required|string|max:100',
+            'grade'=>'required|string|max:100',
+            'year'=>'required|integer|max:2020',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
         $CycleData=request()->except('_token'); 
-        
+
         Cycle::insert($CycleData);
 
-        return response()->json($CycleData);
+        return redirect('cycles')->with('Message','Cycle added');
     }
 
     public function show(Cycle $cycles){
@@ -38,19 +48,31 @@ class CycleController extends Controller
 
     public function update(Request $request, $id){
 
+        $data=[
+            'name'=>'required|string|max:100',
+            'grade'=>'required|string|max:100',
+            'year'=>'required|integer|max:2020',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
         $CycleData=request()->except(['_token','_method']); 
 
         Cycle::where('id','=',$id)->update($CycleData);
 
-        $cycle=Cycle::findOrFail($id);
+        // $cycle=Cycle::findOrFail($id);
 
-        return redirect('cycles');
+        // return redirect('cycles');
+
+        return redirect('cycles')->with('Message','Cycle modified');
     }
 
     public function destroy($id){
 
         Cycle::destroy($id);
 
-        return redirect('cycles');
+        return redirect('cycles')->with('Message','Cycle deleted');
     }
 }

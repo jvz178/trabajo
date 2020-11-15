@@ -1,20 +1,23 @@
-Sección para crear ciclos
-<form action="{{url('/cycles')}}" method="post" enctype="multipart/form-data">
-{{csrf_field() }}
-    <label for="name">{{'Name'}}</label>
-    <input type="text" name="name" id="name" value=""></input>
-    </br>
-    </br>
-    <label for="grade">{{'Grade'}}</label>
-    <input type="text" name="grade" id="grade" value=""></input>
-    </br>
-    </br>
-    <label for="year">{{'Year'}}</label>
-    <input type="number" name="year" id="year" value=""></input>
-    </br>
-    </br>
-    <input type="submit" value="Add"></<input>
+@extends('layouts.app')
 
-    <a href="{{ url('/cycles')}}">Return</a>
+@section('content')
+<div class="container">
 
+@if(count($errors)>0)
+<div class="alert alert-danger" role="alert">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+<form action="{{url('/cycles')}}" class="form-horizontal" method="post">
+    {{ csrf_field() }}
+
+    @include('cycles.form',['Type'=>'create'])
 </form>
+</div>
+
+@endsection
