@@ -27,4 +27,8 @@ Route::resource('assistances', 'AssistanceController');
 Route::resource('menuAlumno', 'menuAlumnoController');
 Route::resource('menuAdmin', 'menuAdminController');
 
+
+Route::resource('tasks', 'TaskController');
+Route::resource('modules', 'ModuleController');
+
 Route::get('/home', 'HomeController@index')->name('home');
