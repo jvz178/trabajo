@@ -17,8 +17,12 @@ class CycleController extends Controller
         return view('cycles.create');
     }
 
-    public function store(Request $request){
+    public function edit($id){
+        $cycle=Cycle::findOrFail($id);
+        return view('cycles.edit',compact('cycle'));
+    }
 
+    public function store(Request $request){
         $data=[
             'name'=>'required|string|max:100',
             'grade'=>'required|string|max:100',
@@ -34,16 +38,6 @@ class CycleController extends Controller
         Cycle::insert($CycleData);
 
         return redirect('cycles')->with('Message','Cycle added');
-    }
-
-    public function show(Cycle $cycles){
-    }
-
-    public function edit($id){
-
-        $cycle=Cycle::findOrFail($id);
-
-        return view('cycles.edit',compact('cycle'));
     }
 
     public function update(Request $request, $id){

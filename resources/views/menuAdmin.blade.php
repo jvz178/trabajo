@@ -10,11 +10,14 @@
                 <a href="{{ url('users')}}" class="btn btn-primary">
                 Users
                 </a>
-                <a href="{{ url('cycles')}}" class="btn btn-success">
+                <a href="{{ url('cycles')}}" class="btn btn-default">
                 Cycles
                 </a>
-                <a href="{{ url('enterprises')}}" class="btn btn-success">
+                <a href="{{ url('enterprises')}}" class="btn btn-info">
                 Enterprises
+                </a>
+                <a href="{{ url('assistances')}}" class="btn btn-success">
+                Assistances
                 </a>
                 </div>
             </div>

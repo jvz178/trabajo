@@ -21,7 +21,6 @@ Create
 <th>Id</th>
 <th>Nombre</th>
 <th>Email</th>
-<th>Deleted</th>
 <th></th>
 </tr>
 </thread>
@@ -31,7 +30,6 @@ Create
 <td>{{$loop->iteration}}</td>
 <td>{{$enterprise->name}}</td>
 <td>{{$enterprise->email}}</td>
-<td>{{$enterprise->deleted}}</td>
 <td>
 
 <a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Editar</a>
@@ -46,5 +44,9 @@ Create
 @endforeach
 </tbody>
 </table>
+
+{{ $enterprises->links() }}
+
+
 </div>
 @endsection

@@ -1,4 +1,4 @@
-{{$Mode=='create'?'Add Cycle':'Modify Cycle'}}
+{{$Mode=='create'?'Add Enterprise':'Modify Enterprise'}}
 
 <div class="form-group">
 <label for="name" class="control-label">{{'Name'}}</label>
