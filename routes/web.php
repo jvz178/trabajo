@@ -32,6 +32,7 @@ Route::resource('assistances', 'AssistanceController');
 Route::resource('menuAlumno', 'menuAlumnoController');
 
 Route::resource('menuTutorE', 'menuTutorEController');
+Route::resource('menuTutorEn', 'menuTutorEnController');
 
 
 Route::resource('tasks', 'TaskController');
