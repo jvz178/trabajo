@@ -41,7 +41,7 @@ class LoginController extends Controller
             case 'al':
                 return '/menuAlumno';
             case 'admin':
-                return '/menuAdmin';
+                return '/home';
             case 'tut_c':
                 return '/menuTutorC';
             case 'tut_e':

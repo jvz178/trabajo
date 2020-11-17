@@ -31,18 +31,39 @@
                     <input type="submit" name="Submit" value="Enterprises" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
                 </a>
 
-                <a href="{{ url('cycles')}}"> 
-                       <input type="submit" name="Submit" value="Cycles" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
-                    </a>
-
-
                 <a href="{{ url('cycles')}}">
                     <input type="submit" name="Submit" value="Cycles" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+
+
+                <a href="{{ url('assistances')}}">
+                    <input type="submit" name="Submit" value="Assistances" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
                 </a>
 
                 <a href="{{ url('worksheets')}}">
                     <input type="submit" name="Submit" value="Worksheets" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
                 </a>
+
+                <a href="{{ url('cce')}}">
+                    <input type="submit" name="Submit" value="CE" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+                <a href="{{ url('modules')}}">
+                    <input type="submit" name="Submit" value="Modules" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+                <a href="{{ url('rra')}}">
+                    <input type="submit" name="Submit" value="RA" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+                <a href="{{ url('studys')}}">
+                    <input type="submit" name="Submit" value="Studys" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+                <a href="{{ url('tasks')}}">
+                    <input type="submit" name="Submit" value="Tasks" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+                <a href="{{ url('visits')}}">
+                    <input type="submit" name="Submit" value="Visits" style="color:black; height:60px; width:240px; font-size:16px; background-color:blue; font-family:verdana;">
+                </a>
+
+        
 
                     
                 

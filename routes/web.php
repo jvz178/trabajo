@@ -16,16 +16,21 @@ Route::get('/', function () {
 });
 
 
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('users', 'UserController');
+   });
+
 Route::resource('cycles', 'CycleController');
 Route::resource('enterprises', 'EnterpriseController');
 
-Route::resource('users', 'UserController');
+
 Auth::routes();
 
 Route::resource('worksheets', 'WorksheetController');
 Route::resource('assistances', 'AssistanceController');
 Route::resource('menuAlumno', 'menuAlumnoController');
-Route::resource('menuAdmin', 'menuAdminController');
+
 Route::resource('menuTutorE', 'menuTutorEController');
 
 
@@ -35,4 +40,3 @@ Route::resource('modules', 'ModuleController');
 Route::resource('cce', 'CeController');
 Route::resource('rra', 'RaController');
 
-Route::get('/home', 'HomeController@index')->name('home');
