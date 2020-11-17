@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
 
 @if(count($errors)>0)
@@ -14,10 +13,11 @@
 </div>
 @endif
 
-<form action="{{ url('/enterprises')}}" class="form-horizontal" method="post">
-{{ csrf_field() }}
+<form action="{{url('/cce')}}" class="form-horizontal" method="post">
+    {{ csrf_field() }}
 
-@include('enterprises.form',['Mode'=>'create'])
+    @include('cce.form',['Type'=>'create'])
 </form>
 </div>
+
 @endsection

@@ -1,13 +1,15 @@
-<label for="Titulo">Crear empresa</label>
-<br/>
-<br/>
-<label for="name">Nombre: </label>
-<input type="text" name="name" id="name" value="{{ isset($enterprise->name)?$enterprise->name:''}}">
-<br/>
-<br/>
-<label for="email">Email: </label>
-<input type="email" name="email" id="email" value="{{ isset($enterprise->email)?$enterprise->email:''}}">
-<br/>
-<br/>
-<input type="submit" value="Crear">
-<a href="{{ url('enterprises')}}">Volver</a>
+{{$Mode=='create'?'Add Enterprise':'Modify Enterprise'}}
+
+<div class="form-group">
+<label for="name" class="control-label">{{'Name'}}</label>
+<input type="text" class="form-control" name="name" id="name" value="{{ isset($enterprise->name)?$enterprise->name:old('name')}}"></input>
+</div>
+
+<div class="form-group">
+<label for="email" class="control-label">Email: </label>
+<input type="email" class="form-control" name="email" id="email" value="{{ isset($enterprise->email)?$enterprise->email:old('email')}}">
+</div>
+
+<input type="submit" value="{{$Mode=='create' ? 'Add':'Modify'}}" class="btn btn-success"></input>
+
+<a class="btn btn-primary" href="{{ url('/enterprises')}}">Return</a>
