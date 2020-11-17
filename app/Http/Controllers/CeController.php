@@ -17,15 +17,14 @@ class CeController extends Controller
     }
 
     public function edit($id){
-        $cce=cce::findOrFail($id);
+        $cce=ce::findOrFail($id);
         return view('cce.edit',compact('cce'));
     }
 
     public function store(Request $request){
         $data=[
-            'name'=>'required|string|max:100',
-            'grade'=>'required|string|max:100',
-            'year'=>'required|integer|max:2020',
+            'word'=>'required|string|max:100',
+            'description'=>'required|string|max:200',
         ];
 
         $Message=["required"=>':attribute is required'];
@@ -34,7 +33,7 @@ class CeController extends Controller
 
         $cceData=request()->except('_token'); 
 
-        cce::insert($cceData);
+        ce::insert($cceData);
 
         return redirect('cce')->with('Message','cce added');
     }
@@ -42,9 +41,8 @@ class CeController extends Controller
     public function update(Request $request, $id){
 
         $data=[
-            'name'=>'required|string|max:100',
-            'grade'=>'required|string|max:100',
-            'year'=>'required|integer|max:2020',
+            'word'=>'required|string|max:100',
+            'description'=>'required|string|max:200',
         ];
 
         $Message=["required"=>':attribute is required'];
@@ -53,7 +51,7 @@ class CeController extends Controller
 
         $cceData=request()->except(['_token','_method']); 
 
-        cce::where('id','=',$id)->update($cceData);
+        ce::where('id','=',$id)->update($cceData);
 
         // $cce=cce::findOrFail($id);
 
@@ -64,7 +62,7 @@ class CeController extends Controller
 
     public function destroy($id){
 
-        cce::destroy($id);
+        ce::destroy($id);
 
         return redirect('cce')->with('Message','cce deleted');
     }

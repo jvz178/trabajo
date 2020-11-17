@@ -33,5 +33,6 @@ Route::resource('tasks', 'TaskController');
 Route::resource('modules', 'ModuleController');
 
 Route::resource('cce', 'CeController');
+Route::resource('rra', 'RaController');
 
 Route::get('/home', 'HomeController@index')->name('home');
