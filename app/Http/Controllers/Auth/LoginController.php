@@ -24,7 +24,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -41,11 +41,11 @@ class LoginController extends Controller
             case 'al':
                 return '/menuAlumno';
             case 'admin':
-                return '/home';
+                return '/menuAdmin';
             case 'tut_c':
-                return '/tutorCenter';
+                return '/menuTutorC';
             case 'tut_e':
-                return '/tutorEnterprise';
+                return '/menuTutorE';
             default:
                 return '/';
         }

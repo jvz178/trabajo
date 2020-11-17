@@ -7,7 +7,7 @@
             <div class="panel panel-primary">
                 
                 <div class="panel-heading"></div>
-                <h1 style="text-align:center">FP DUAL MANAGE</h1>
+                <h1 style="text-align:center">MENU MANAGER</h1>
 
                 <div class="panel-body">
                     @if (session('status'))
