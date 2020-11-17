@@ -35,4 +35,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function redirectPath(){
+        switch(auth()->user()->type ) {
+            case 'al':
+                return '/menuAlumno';
+            case 'admin':
+                return '/home';
+            case 'tut_c':
+                return '/tutorCenter';
+            case 'tut_e':
+                return '/tutorEnterprise';
+            default:
+                return '/';
+        }
+        
+    }
 }

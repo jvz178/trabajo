@@ -24,18 +24,16 @@
             <br/>
             
 
-                <a href="{{ url('users')}}">
-                    <a href="{{ url('enterprises')}}">  
-                        <input type="submit" name="Submit" value="Users" style="color:black; height:60px; width:240px; font-size:16px; backghround-color:red; font-family:verdana;">
+                <a href="{{ url('users')}}"> 
+                        <input type="submit" name="Submit" value="Users" style="color:black; height:60px; width:240px; font-size:16px; background-color:red; font-family:verdana;">
                     
                     </a>
 
                 <a href="{{ url('enterprises')}}">  
-                    <input type="submit" name="Submit" value="Enterprises" style="color:black; height:60px; width:240px; font-size:16px; backghround-color:red; font-family:verdana;">
+                    <input type="submit" name="Submit" value="Enterprises" style="color:black; height:60px; width:240px; font-size:16px; background-color:red; font-family:verdana;">
                 </a>
-                <a href="{{ url('cycles')}}">
-                    <a href="{{ url('enterprises')}}">  
-                       <input type="submit" name="Submit" value="Cycles" style="color:black; height:60px; width:240px; font-size:16px; backghround-color:red; font-family:verdana;">
+                <a href="{{ url('cycles')}}"> 
+                       <input type="submit" name="Submit" value="Cycles" style="color:black; height:60px; width:240px; font-size:16px; background-color:red; font-family:verdana;">
                     </a>
                     </a>
                     
