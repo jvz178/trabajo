@@ -20,6 +20,6 @@ class alMiddleware
         (auth()->check() && auth()->user()->type === 'admin'))
             return $next($request);
 
-        return redirect('/menuAlumno');
+        return redirect('/error');
 }
 }

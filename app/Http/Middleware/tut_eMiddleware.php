@@ -19,6 +19,6 @@ class tut_eMiddleware
         (auth()->check() && auth()->user()->type === 'admin'))
             return $next($request);
 
-        return redirect('/menuTutorEn');
+        return redirect('/error');
 }
 }

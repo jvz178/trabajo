@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('error', function(){
+    return view('error');
+});
+
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
@@ -46,6 +50,7 @@ Route::group(['middleware' => 'tut_e'], function () {
 });
 
 Auth::routes();
+
 
 
 
