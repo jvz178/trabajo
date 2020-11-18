@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->foreign('enterprise_id')->references('id')->on('enterprises');
             $table->unsignedInteger('cycle_id')->nullable();
             $table->foreign('cycle_id')->references('id')->on('cycles');
-            $table->rememberToken();
+            $table->string('remember_token',100);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
