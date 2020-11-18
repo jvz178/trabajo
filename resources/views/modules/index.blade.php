@@ -26,8 +26,7 @@
     <body>
     @foreach ($modules as $module)
         <tr></tr>
-        <td>{{$loop->iteration}}</td>
-        
+        <td>{{$module->id}}</td>
         <td>{{$module->name}}</td>
         <td>{{$module->cycle_id}}</td>
     

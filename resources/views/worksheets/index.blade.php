@@ -19,7 +19,7 @@
 <tbody>
 @foreach($worksheets as $worksheet)
 <tr>
-<td>{{$loop->iteration}}</td>
+<td>{{$worksheet->id}}</td>
 <td>{{$worksheet->date}}</td>
 <td>{{$worksheet->description}}</td>
 <td>{{$worksheet->student_id}}</td>

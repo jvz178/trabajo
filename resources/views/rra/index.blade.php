@@ -27,7 +27,7 @@
     <tbody>
     @foreach($rra as $ra)
         <tr>
-            <td>{{$loop->iteration}}</td>
+            <td>{{$ra->id}}</td>
             <td>{{$ra->number}}</td>
             <td>{{$ra->description}}</td>
             <td>{{$ra->module_id}}</td>

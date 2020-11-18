@@ -18,7 +18,7 @@
     <tbody>
     @foreach($cce as $ce)
         <tr>
-            <td>{{$loop->iteration}}</td>
+            <td>{{$ce->id}}</td>
             <td>{{$ce->word}}</td>
             <td>{{$ce->description}}</td>
             <td>

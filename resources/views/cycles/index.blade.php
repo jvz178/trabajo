@@ -27,7 +27,7 @@
     <tbody>
     @foreach($cycles as $cycle)
         <tr>
-            <td>{{$loop->iteration}}</td>
+            <td>{{$cycle->id}}</td>
             <td>{{$cycle->name}}</td>
             <td>{{$cycle->grade}}</td>
             <td>{{$cycle->year}}</td>

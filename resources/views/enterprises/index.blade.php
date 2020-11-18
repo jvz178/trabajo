@@ -27,7 +27,7 @@ Create
 <tbody>
 @foreach($enterprises as $enterprise)
 <tr>
-<td>{{$loop->iteration}}</td>
+<td>{{$enterprise->id}}</td>
 <td>{{$enterprise->name}}</td>
 <td>{{$enterprise->email}}</td>
 <td>
