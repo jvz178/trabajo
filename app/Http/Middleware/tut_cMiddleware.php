@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class alMiddleware
+class tut_cMiddleware
 {
     /**
      * Handle an incoming request.
@@ -13,13 +13,13 @@ class alMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    
     public function handle($request, Closure $next)
 {
-        if ((auth()->check() && auth()->user()->type === 'al' )||
+        if ((auth()->check() && auth()->user()->type === 'tut_c' )||
         (auth()->check() && auth()->user()->type === 'admin'))
             return $next($request);
 
-        return redirect('/menuAlumno');
+        return redirect('/menuTutorE');
 }
 }
+

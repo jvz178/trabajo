@@ -43,9 +43,9 @@ class LoginController extends Controller
             case 'admin':
                 return '/home';
             case 'tut_c':
-                return '/menuTutorC';
-            case 'tut_e':
                 return '/menuTutorE';
+            case 'tut_e':
+                return '/menuTutorEn';
             default:
                 return '/';
         }

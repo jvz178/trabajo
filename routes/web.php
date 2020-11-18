@@ -19,17 +19,37 @@ Route::get('/', function () {
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('users', 'UserController');
-Route::resource('cycles', 'CycleController');
-Route::resource('enterprises', 'EnterpriseController');
+    Route::resource('cycles', 'CycleController');
+    Route::resource('enterprises', 'EnterpriseController');
+
+   });
+
+
+Route::group(['middleware' => 'al'], function () {
+    Route::resource('assistances', 'AssistanceController');
+    Route::resource('menuAlumno', 'menuAlumnoController');
+    Route::resource('worksheets', 'WorksheetController');
+   });
+
+Route::group(['middleware' => 'tut_c'], function () {
+    Route::resource('tasks', 'TaskController');
+    Route::resource('modules', 'ModuleController');
+    Route::resource('menuTutorE', 'menuTutorEController');
+    Route::resource('cce', 'CeController');
+    Route::resource('rra', 'RaController');
+    
+});
+
+Route::group(['middleware' => 'tut_e'], function () {
+
+    Route::resource('menuTutorEn', 'menuTutorEnController');
+});
+
+Auth::routes();
 
 
 
-Route::resource('worksheets', 'WorksheetController');
-Route::resource('assistances', 'AssistanceController');
-Route::resource('menuAlumno', 'menuAlumnoController');
 
-Route::resource('menuTutorE', 'menuTutorEController');
-Route::resource('menuTutorEn', 'menuTutorEnController');
 
 
 
