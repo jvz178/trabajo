@@ -5,11 +5,13 @@
 <div class="container">
 <table class="table table-light">
 <thread class="thread-light">
-<tr>
+<a href="{{ url('worksheets/create')}}" class="btn btn-success">Create</a>
+<br/>
+<br/>
 <th>Id</th>
-<th>Fecha</th>
-<th>Descripción</th>
-<th>Id_estudiante</th>
+<th>Date</th>
+<th>Description</th>
+<th>Student_id</th>
 <th>Accepted</th>
 <th>Deleted</th>
 </tr>
@@ -25,12 +27,12 @@
 <td>{{$worksheet->deleted}}</td>
 <td>
 
-<a href="{{ url('/worksheets/'.$worksheet->id.'/edit')}}">Editar</a>
+<a href="{{ url('/worksheets/'.$worksheet->id.'/edit')}}" class="btn btn-warning">Edit</a>
 
-<form method="post" action="{{ url('/worksheets/'.$worksheet->id)}}">
+<form method="post" action="{{ url('/worksheets/'.$worksheet->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}
-<button type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');"> Borrar </button>
+<button class="btn btn-danger" type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');">Delete</button>
 </form>
 </td>
 </tr>
