@@ -14,7 +14,7 @@
                 Task done
                 </a>
                 <a href="{{ url('')}}" class="btn btn-success">
-                Firmar Hoja Trabajo
+                Sign worksheet
                 </a>
                 </div>
             </div>

@@ -10,7 +10,7 @@ class EnterpriseController extends Controller
 {
     
     public function index(){
-        $data['enterprises']=Enterprise::paginate(5);
+        $data['enterprises']=Enterprise::where('deleted',0)->paginate(5);
         return view('enterprises.index',$data);
     }
 
@@ -41,7 +41,8 @@ class EnterpriseController extends Controller
     }
 
     public function destroy($id){
-        Enterprise::destroy($id);
+        $valor = enterprise::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('enterprises')->with('Message','Enterprise deleted');
     }
 

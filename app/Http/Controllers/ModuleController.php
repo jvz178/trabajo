@@ -9,8 +9,8 @@ class ModuleController extends Controller
 {
     public function index(){
     
-        $datos['modules']=module::paginate(5);
-        return view('modules.index', $datos);
+        $campos['modules']=module::where('deleted',0)->paginate(5);
+        return view('modules.index', $campos);
     }
     
     public function create(){
@@ -53,7 +53,8 @@ class ModuleController extends Controller
     }
     public function destroy($id){
         
-        module::destroy($id);
+        $valor = module::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('modules')->with('Mensaje', 'Module deleted');
     }
     }

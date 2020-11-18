@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CycleController extends Controller
 {
     public function index(){
-        $Data['cycles']=Cycle::paginate(5);
+        $Data['cycles']=cycle::where('deleted',0)->paginate(5);
         return view('cycles.index',$Data);
     }
 
@@ -65,7 +65,8 @@ class CycleController extends Controller
 
     public function destroy($id){
 
-        Cycle::destroy($id);
+        $valor = cycle::where('id',$id);
+        $valor -> increment('deleted');
 
         return redirect('cycles')->with('Message','Cycle deleted');
     }

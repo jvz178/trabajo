@@ -57,16 +57,16 @@
         <input type="text" class="form-control {{$errors->has('cycle_id')?'is-invalid':''}} "name="cycle_id" id="cycle_id" 
         value="{{ isset($users->cycle_id)?$users->cicle_id:old('cycle_id')}}">
         {!! $errors->first('cycle_id','<div class="invalid-feedback">:message</div>')!!}
-        
     </div>
 
     <div class="form-group">
         <label for="user" >Type:</label> 
-            <select id="user" class="form-control" name="user">
-                <option>Al</option>
-                <option>tut_c</option>
-                <option>tut_e</option>
+            <select id="userType" class="form-control" name="user">
+                <option value="al">Student</option>
+                <option value="tut_c">Tutor Educational</option>
+                <option value="tut_e">Tutor Enterprise</option>
             </select>
+            {!! $errors->first('userType','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
 

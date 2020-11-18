@@ -9,8 +9,8 @@ class TaskController extends Controller
 {
     public function index(){
     
-        $datos['tasks']=task::paginate(5);
-        return view('tasks.index', $datos);
+        $campos['tasks']=task::where('deleted',0)->paginate(5);
+        return view('tasks.index', $campos);
     }
     
     public function create(){
@@ -22,8 +22,6 @@ class TaskController extends Controller
          $campos=[
              'number'=>'required|integer|max:20',
              'description'=>'required|string|max:1000',
-             
-             
          ];
     
          $Mensaje=["required"=>'The :attribute ir required'];
@@ -54,7 +52,8 @@ class TaskController extends Controller
     }
     public function destroy($id){
         
-        Task::destroy($id);
+        $valor = task::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('tasks')->with('Mensaje', 'Task delete');
     }
     }
