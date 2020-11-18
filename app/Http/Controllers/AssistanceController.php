@@ -9,7 +9,7 @@ class AssistanceController extends Controller
 {
     public function index(){
 
-        $data['assistances']=assistance::paginate(5);
+        $data['assistances']=assistance::where('deleted',0)->paginate(5);
         return view('assistances.index',$data);
     }
 
@@ -43,7 +43,8 @@ class AssistanceController extends Controller
 
     public function destroy($id){
 
-        assistance::destroy($id);
+        $valor = assistance::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('assistances');
     }
 
