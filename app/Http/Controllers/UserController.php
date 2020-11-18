@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\user;
 
+
 class UserController extends Controller
 {
     
@@ -63,4 +64,7 @@ public function destroy($id){
     User::destroy($id);
     return redirect('users')->with('Mensaje', 'Usuario eliminado');
 }
+
+
+
 }
