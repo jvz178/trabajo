@@ -4,10 +4,11 @@ use Faker\Generator as Faker;
 
 $factory->define(App\visit::class, function (Faker $faker) {
     return [
-        'tutor_c_id' =>\App\user::all()->random()->id,
+        'tracing_id' =>\App\Tracing::all()->random()->id,
         'enterprise_id' =>\App\enterprise::all()->random()->id,
         'date' => $faker->dateTime($max = 'now', $timezone = null),
-        'kms' => $faker->number_format,
+        'kms' => $faker->randomDigit,
+        'accepted' => $faker->boolean = false,
         'deleted' => $faker->boolean = false,
     ];
 });
