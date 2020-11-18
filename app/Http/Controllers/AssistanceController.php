@@ -26,9 +26,19 @@ class AssistanceController extends Controller
 
     public function store(Request $request){
 
+        $data=[
+            'student_id'=>'required|integer|max:100',
+            'date'=>'required|date',
+            'assistance'=>'required|string|max:100',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
         $assistanceData=request()->except('_token');
         assistance::insert($assistanceData);
-        return redirect('assistances');
+        return redirect('assistances')->with('Message','Assistance added');
     }
 
     public function destroy($id){

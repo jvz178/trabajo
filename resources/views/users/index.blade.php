@@ -6,8 +6,9 @@
 <div class="container">
 
 @if(Session::has('Mensaje')){{
-    Session::get('Mensaje')
-
+    <div class="alert alert-success" role="alert">
+{{  Session::get('Mensaje')  }}
+    </div>
 }}
 @endif
 
@@ -47,16 +48,14 @@
         <td>{{$user->cycle_id}}</td>
         <td>{{$user->type}}</td>
         
-            
-
         <td>
         <a class="btn btn-warning" href="{{url('/users/'.$user->id.'/edit')}}" >
             Edit 
         </a>
         
         <form method="post" action="{{url('/users/'.$user->id)}}" style="display:inline">
-         {{csrf_field()}}
-         {{method_field('DELETE')}}
+        {{csrf_field()}}
+        {{method_field('DELETE')}}
         <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
         </form>
         </td>
