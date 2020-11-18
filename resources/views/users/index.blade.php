@@ -35,7 +35,11 @@
     <body>
     @foreach ($users as $user)
         <tr></tr>
+<<<<<<< HEAD
         <td>{{$user->id}}</td> 
+=======
+        <td>{{$user->id}}</td>
+>>>>>>> 09c423669df89803b88853894200b5e9406d9183
         <td>{{$user->name}}</td>
         <td>{{$user->firstname}}</td>
         <td>{{$user->phone}}</td>
