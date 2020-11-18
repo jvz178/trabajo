@@ -20,8 +20,8 @@ class CreateAssistancesTable extends Migration
             $table->foreign('student_id')->references('id')->on('users');
             $table->date('date');
             $table->string('assistance');
-            $table->boolean('accepted');
-            $table->boolean('deleted')->default(false);
+            $table->boolean('accepted')->default(0);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

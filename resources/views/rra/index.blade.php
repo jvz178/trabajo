@@ -27,7 +27,11 @@
     <tbody>
     @foreach($rra as $ra)
         <tr>
+<<<<<<< HEAD
             <td>{{$ra->id}}</td>
+=======
+            <td>{{$user->id}}</td>
+>>>>>>> 9add768d9047f245706b8c185f22e5b424d4b389
             <td>{{$ra->number}}</td>
             <td>{{$ra->description}}</td>
             <td>{{$ra->module_id}}</td>

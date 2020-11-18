@@ -38,12 +38,9 @@ public function store(Request $request){
      $datosUsers=request()->except('_token');
       user::insert($datosUsers);
       //return response()->json($enterpriseData);
-     return redirect('users')->with('Mensaje', 'Usuario creado');
+     return redirect('users')->with('Mensaje', 'User created');
 }
 
-public function show(users $users){
-    //
-}
 public function edit($id){
 
     $users=User::findOrFail($id);
@@ -56,13 +53,13 @@ public function update(Request $request, $id){
     User::where('id', '=', $id)->update($datosUsers);
     //  $student=Student::findOrFail($id);
     //  return view('student.edit', compact('student'));
-     return redirect ('users')->with('Mensaje', 'Usuario modificado');
+     return redirect ('users')->with('Mensaje', 'User modified');
 
 }
 public function destroy($id){
     
     User::destroy($id);
-    return redirect('users')->with('Mensaje', 'Usuario eliminado');
+    return redirect('users')->with('Mensaje', 'User deleted');
 }
 
 

@@ -9,7 +9,7 @@ class AssistanceController extends Controller
 {
     public function index(){
 
-        $data['assistances']=assistance::paginate(5);
+        $data['assistances']=assistance::where('deleted',0)->paginate(5);
         return view('assistances.index',$data);
     }
 
@@ -26,14 +26,25 @@ class AssistanceController extends Controller
 
     public function store(Request $request){
 
+        $data=[
+            'student_id'=>'required|integer|max:100',
+            'date'=>'required|date',
+            'assistance'=>'required|string|max:100',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+
+        $this->validate($request,$data,$Message);
+
         $assistanceData=request()->except('_token');
         assistance::insert($assistanceData);
-        return redirect('assistances');
+        return redirect('assistances')->with('Message','Assistance added');
     }
 
     public function destroy($id){
 
-        assistance::destroy($id);
+        $valor = assistance::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('assistances');
     }
 

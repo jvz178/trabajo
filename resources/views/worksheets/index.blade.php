@@ -39,5 +39,8 @@
 @endforeach
 </tbody>
 </table>
+
+{{ $worksheets->links() }}
+
 </div>
 @endsection
