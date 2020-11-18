@@ -1,4 +1,4 @@
-<label for="Titulo">Nueva ficha</label>
+<label for="Titulo">New sheet</label>
 <br/>
 <br/>
 <label for="date">Fecha: </label>
@@ -17,5 +17,5 @@
 <input type="boolean" name="accepted" id="accepted" value="{{ isset($worksheet->accepted)?$worksheet->accepted:''}}">
 <br/>
 <br/>
-<input type="submit" value="Crear">
-<a href="{{ url('worksheets')}}">Volver</a>
+<input class="btn btn-success" type="submit" value="Modify">
+<a class="btn btn-primary" href="{{ url('worksheets')}}">Return</a>
