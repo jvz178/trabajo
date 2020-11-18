@@ -21,7 +21,7 @@ class ModuleController extends Controller
         
          $campos=[
              'name'=>'required|string|max:20',
-              'cycle_id'=>'required|integer|max:4',
+             'cycle_id'=>'required|integer',
          ];
 
 
@@ -37,26 +37,23 @@ class ModuleController extends Controller
          return redirect('modules')->with('Mensaje', 'Module created');
     }
     
-    public function show(modules $modules){
-        //
-    }
     public function edit($id){
     
-        $modules=Module::findOrFail($id);
+        $modules=module::findOrFail($id);
         return view('modules.edit', compact('modules'));
         //
     }
     public function update(Request $request, $id){
         
         $datosModules=request()->except(['_token', '_method']);
-        Modules::where('id', '=', $id)->update($datosModules);
+        module::where('id', '=', $id)->update($datosModules);
        
          return redirect ('modules')->with('Mensaje', 'Module modify');
     
     }
     public function destroy($id){
         
-        Module::destroy($id);
+        module::destroy($id);
         return redirect('modules')->with('Mensaje', 'Module deleted');
     }
     }
