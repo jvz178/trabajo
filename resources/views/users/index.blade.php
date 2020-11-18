@@ -36,12 +36,10 @@
     <body>
     @foreach ($users as $user)
         <tr></tr>
-        <td>{{$loop->iteration}}</td>
-        
+        <td>{{$user->id}}</td>
         <td>{{$user->name}}</td>
         <td>{{$user->firstname}}</td>
         <td>{{$user->phone}}</td>
-      
         <td>{{$user->email}}</td>
         <td>{{$user->email_verified_at}}</td>
         <td>{{$user->enterprise_id}}</td>
