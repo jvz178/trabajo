@@ -39,8 +39,5 @@
 @endforeach
 </tbody>
 </table>
-<a href="{{ url('worksheets/create')}}"class="btn btn-success">
-Create
-</a>
 </div>
 @endsection

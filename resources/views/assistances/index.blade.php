@@ -36,7 +36,7 @@
 
 <a class="btn btn-warning" href="{{ url('/assistances/'.$assistance->id.'/edit')}}">Editar</a>
 
-<form method="post" action="{{ url('/assistances/'.$assistance->id)}}">
+<form method="post" action="{{ url('/assistances/'.$assistance->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}
 <button type="submit" onclick="return confirm('Delete?');" class="btn btn-danger">Delete</button>

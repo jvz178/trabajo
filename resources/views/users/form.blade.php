@@ -61,11 +61,12 @@
     </div>
 
     <div class="form-group">
-        <label for="type">{{'Type: '}}</label>
-        <input type="text" class="form-control {{$errors->has('type')?'is-invalid':''}} "name="type" id="type" 
-        value="{{ isset($users->type)?$users->type:old('type')}}">
-        {!! $errors->first('type','<div class="invalid-feedback">:message</div>')!!}
-    
+        <label for="user" >Type:</label> 
+            <select id="user" class="form-control" name="user">
+                <option>Al</option>
+                <option>tut_c</option>
+                <option>tut_e</option>
+            </select>
     </div>
 
 
