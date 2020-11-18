@@ -5,13 +5,13 @@
 <div class="container">
 <table class="table table-light">
 <thread class="thread-light">
-<a href="{{ url('worksheets/create')}}" class="btn btn-success">Crear</a>
+<a href="{{ url('worksheets/create')}}" class="btn btn-success">Create</a>
 <br/>
 <br/>
 <th>Id</th>
-<th>Fecha</th>
-<th>Descripción</th>
-<th>Id_estudiante</th>
+<th>Date</th>
+<th>Description</th>
+<th>Student_id</th>
 <th>Accepted</th>
 <th>Deleted</th>
 </tr>
@@ -39,5 +39,7 @@
 @endforeach
 </tbody>
 </table>
+<br/>
+<a href="{{ url('home')}}" class="btn btn-primary">Back to menu</a>
 </div>
 @endsection
