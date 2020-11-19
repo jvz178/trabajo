@@ -63,7 +63,16 @@ public function edit($id){
 public function update(Request $request, $id){
     
     $datosUsers=request()->except(['_token', '_method']);
-    User::where('id', '=', $id)->update($datosUsers);
+    $datos=[
+        'name'=>$datosUsers['name'],
+        'firstname'=>$datosUsers['firstname'],
+        'phone'=>$datosUsers['phone'],
+        'email'=>$datosUsers['email'],
+        'email_verified_at'=>$datosUsers['email_verified_at'],
+        'password'=> bcrypt($datosUsers['password']),
+        'type'=>$datosUsers['type'],
+     ];
+    User::where('id', '=', $id)->update($datos);
     //  $student=Student::findOrFail($id);
     //  return view('student.edit', compact('student'));
      return redirect ('users')->with('Mensaje', 'User modified');
