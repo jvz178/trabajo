@@ -11,7 +11,7 @@
 @endif
 
 <a href="{{ url('users/create')}}"class="btn btn-success">New user</a>
-<a href="{{ url('home')}}"class="btn btn-success">Volver a menú</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/>
 <br/>
 
@@ -53,7 +53,7 @@
         <form method="post" action="{{url('/users/'.$user->id)}}" style="display:inline">
         {{csrf_field()}}
         {{method_field('DELETE')}}
-        <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
+        <button class="btn btn-danger" type="submit" onclick="return confirm('¿Delete?');">Delete</button>
         </form>
         </td>
         </tr>

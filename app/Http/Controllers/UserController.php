@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\user;
 
-
 class UserController extends Controller
 {
     
@@ -15,7 +14,9 @@ public function index(){
     return view('users.index', $campos);
 }
 
-public function create(){
+public function create(Request $request){
+
+
     return view('users.create');
 }
 
@@ -33,10 +34,22 @@ public function store(Request $request){
 
      $Mensaje=['required'=>'El :attribute es requerido'];
      $this->validate($request,$campos,$Mensaje);
-    
+     
+
 
      $datosUsers=request()->except('_token');
-      user::insert($datosUsers);
+
+     $datos=[
+        'name'=>$datosUsers['name'],
+        'firstname'=>$datosUsers['firstname'],
+        'phone'=>$datosUsers['phone'],
+        'email'=>$datosUsers['email'],
+        'email_verified_at'=>$datosUsers['email_verified_at'],
+        'password'=> bcrypt($datosUsers['password']),
+        'type'=>$datosUsers['type'],
+     ];
+
+     user::insert($datos);
       
      return redirect('users')->with('Mensaje', 'User created');
 }
