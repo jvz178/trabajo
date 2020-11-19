@@ -26,9 +26,18 @@ class WorksheetController extends Controller
 
     public function store(Request $request){
 
+        $campos=[
+            'date' => 'required|date',
+            'description' => 'required|string',
+            'student_id' => 'required|integer',
+        ];
+
+        $Mensaje=["required"=>'The :attribute is required'];
+        $this->validate($request,$campos,$Mensaje);
+
         $data=request()->except('_token');
         worksheet::insert($data);
-        return redirect('worksheets');
+        return redirect('worksheets')->with('Mensaje', 'User created');
     }
 
     public function destroy($id){

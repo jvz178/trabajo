@@ -3,6 +3,13 @@
 @section('content')
 
 <div class="container">
+
+@if(Session::has('Mensaje')){{
+    Session::get('Mensaje')
+
+}}
+@endif
+
 <table class="table table-light">
 <thread class="thread-light">
 <a href="{{ url('worksheets/create')}}" class="btn btn-success">New worksheet</a>
