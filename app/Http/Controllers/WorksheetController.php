@@ -37,7 +37,7 @@ class WorksheetController extends Controller
 
         $data=request()->except('_token');
         worksheet::insert($data);
-        return redirect('worksheets')->with('Mensaje', 'User created');
+        return redirect('worksheets')->with('Mensaje', 'Worksheet created');
     }
 
     public function destroy($id){
@@ -52,6 +52,6 @@ class WorksheetController extends Controller
         $data=request()->except(['_token','_method']);
         Worksheet::where('id','=', $id)->update($data);
         //$worksheet= Worksheets::findOrFail($id);
-        return redirect('worksheets');
+        return redirect('worksheets')->with('Mensaje', 'Worksheet modified');
     }
 }
