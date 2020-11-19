@@ -51,8 +51,6 @@ public function update(Request $request, $id){
     
     $datosUsers=request()->except(['_token', '_method']);
     User::where('id', '=', $id)->update($datosUsers);
-    //  $student=Student::findOrFail($id);
-    //  return view('student.edit', compact('student'));
      return redirect ('users')->with('Mensaje', 'User modified');
 
 }
