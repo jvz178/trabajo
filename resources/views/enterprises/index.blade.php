@@ -32,7 +32,7 @@ Create
 <td>{{$enterprise->email}}</td>
 <td>
 
-<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Editar</a>
+<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Modify</a>
 
 <form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}" style="display:inline">
 {{csrf_field()}}

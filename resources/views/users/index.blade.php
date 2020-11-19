@@ -32,7 +32,7 @@
         </tr>
     </thead>
 
-    <body>
+    <tbody>
     @foreach ($users as $user)
         <tr></tr>
         <td>{{$user->id}}</td> 
@@ -58,7 +58,7 @@
         </td>
         </tr>
     @endforeach
-    </body>
+    </tbody>
 </table>
 
 {{ $users->links() }}
