@@ -6,7 +6,7 @@
 </div>
 
 <div class="form-group">
-<label for="email" class="control-label">Email: </label>
+<label for="email" class="control-label">{{'Email: '}}</label>
 <input type="email" class="form-control" name="email" id="email" value="{{ isset($enterprise->email)?$enterprise->email:old('email')}}">
 </div>
 

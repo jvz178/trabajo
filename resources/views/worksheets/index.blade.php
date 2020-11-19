@@ -12,8 +12,6 @@
 <th>Date</th>
 <th>Description</th>
 <th>Student_id</th>
-<th>Accepted</th>
-<th>Deleted</th>
 </tr>
 </thread>
 <tbody>
@@ -23,8 +21,6 @@
 <td>{{$worksheet->date}}</td>
 <td>{{$worksheet->description}}</td>
 <td>{{$worksheet->student_id}}</td>
-<td>{{$worksheet->accepted}}</td>
-<td>{{$worksheet->deleted}}</td>
 <td>
 
 <a href="{{ url('/worksheets/'.$worksheet->id.'/edit')}}" class="btn btn-warning">Edit</a>
@@ -32,7 +28,7 @@
 <form method="post" action="{{ url('/worksheets/'.$worksheet->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}
-<button class="btn btn-danger" type="submit" onclick="return confirm('¿Seguro que quieres borrar esto?');">Delete</button>
+<button class="btn btn-danger" type="submit" onclick="return confirm('Do you want Delete?');">Delete</button>
 </form>
 </td>
 </tr>

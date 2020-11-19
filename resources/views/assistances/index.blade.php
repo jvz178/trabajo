@@ -19,9 +19,9 @@
 <thread class="thread-light">
 <tr>
 <th>Id</th>
-<th>Id_estudiante</th>
-<th>Fecha</th>
-<th>Asistencia</th>
+<th>Student_Id</th>
+<th>Date</th>
+<th>Assistance</th>
 <th></th>
 </tr>
 </thread>

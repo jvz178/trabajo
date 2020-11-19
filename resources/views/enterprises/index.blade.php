@@ -19,7 +19,7 @@ Create
 <thread class="thread-light">
 <tr>
 <th>Id</th>
-<th>Nombre</th>
+<th>Name</th>
 <th>Email</th>
 <th></th>
 </tr>
