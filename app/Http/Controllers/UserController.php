@@ -37,7 +37,7 @@ public function store(Request $request){
 
      $datosUsers=request()->except('_token');
       user::insert($datosUsers);
-      //return response()->json($enterpriseData);
+      
      return redirect('users')->with('Mensaje', 'User created');
 }
 

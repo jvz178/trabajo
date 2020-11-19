@@ -61,10 +61,10 @@
 
     <div class="form-group">
         <label for="user" >Type:</label> 
-            <select id="userType" class="form-control" name="user">
+            <select id="user" class="form-control" name="user">
                 <option value="al">Student</option>
-                <option value="tut_c">Tutor Educational</option>
                 <option value="tut_e">Tutor Enterprise</option>
+                <option value="tut_c">Tutor Educational</option>
             </select>
             {!! $errors->first('userType','<div class="invalid-feedback">:message</div>')!!}
     </div>
