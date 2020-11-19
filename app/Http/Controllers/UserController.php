@@ -11,8 +11,8 @@ class UserController extends Controller
     
 public function index(){
     
-    $datos['users']=user::paginate(5);
-    return view('users.index', $datos);
+    $campos['users']=user::where('deleted',0)->paginate(5);
+    return view('users.index', $campos);
 }
 
 public function create(){
@@ -28,10 +28,10 @@ public function store(Request $request){
          'email'=>'required|string|max:50',
          'email_verified_at'=>'required|string|max:50',
          'password'=>'required|string|max:10',
-         'type'=>'required|string|max:50',
+         'type'=>'required|string|max:5',
      ];
 
-     $Mensaje=["required"=>'El :attribute es requerido'];
+     $Mensaje=['required'=>'El :attribute es requerido'];
      $this->validate($request,$campos,$Mensaje);
     
 
@@ -58,7 +58,8 @@ public function update(Request $request, $id){
 }
 public function destroy($id){
     
-    User::destroy($id);
+    $valor = user::where('id',$id);
+    $valor -> increment('deleted');
     return redirect('users')->with('Mensaje', 'User deleted');
 }
 

@@ -8,7 +8,7 @@ use App\ce;
 class CeController extends Controller
 {
     public function index(){
-        $Data['cce']=ce::paginate(5);
+        $Data['cce']=ce::where('deleted',0)->paginate(5);
         return view('cce.index',$Data);
     }
 
@@ -62,7 +62,8 @@ class CeController extends Controller
 
     public function destroy($id){
 
-        ce::destroy($id);
+        $valor = ce::where('id',$id);
+        $valor -> increment('deleted');
 
         return redirect('cce')->with('Message','cce deleted');
     }

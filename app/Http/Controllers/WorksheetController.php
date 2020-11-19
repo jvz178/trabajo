@@ -9,7 +9,7 @@ class WorksheetController extends Controller
 {
     public function index(){
 
-        $data['worksheets']=worksheet::paginate(5);
+        $data['worksheets']=worksheet::where('deleted',0)->paginate(5);
         return view('worksheets.index',$data);
     }
 
@@ -26,21 +26,22 @@ class WorksheetController extends Controller
 
     public function store(Request $request){
 
-        $worksheetData=request()->except('_token');
-        worksheet::insert($worksheetData);
+        $data=request()->except('_token');
+        worksheet::insert($data);
         return redirect('worksheets');
     }
 
     public function destroy($id){
 
-        worksheet::destroy($id);
+        $valor = Worksheet::where('id',$id);
+        $valor -> increment('deleted');
         return redirect('worksheets');
     }
 
     public function update(Request $request, $id){
 
-        $worksheetData=request()->except(['_token','_method']);
-        Worksheet::where('id','=', $id)->update($worksheetData);
+        $data=request()->except(['_token','_method']);
+        Worksheet::where('id','=', $id)->update($data);
         //$worksheet= Worksheets::findOrFail($id);
         return redirect('worksheets');
     }

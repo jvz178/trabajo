@@ -5,13 +5,13 @@
     <div class="row">
         <div class>
             <div class="panel panel-default">
-                <div class="panel-heading">Bienvenido, alumno</div>
+                <div class="panel-heading">Welcome, student</div>
                 <div class="panel-body">
                 <a href="{{ url('worksheets')}}">
-                <button>Ficha de seguimiento</button>
+                <button>Monitoring sheet</button>
                 </a>
                 <a href="{{ url('assistances')}}">
-                <button>Asistencia</button>
+                <button>Assistance</button>
                 </a>
                 </div>
             </div>

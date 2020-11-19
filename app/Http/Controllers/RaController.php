@@ -8,7 +8,7 @@ use App\ra;
 class RaController extends Controller
 {
     public function index(){
-        $Data['rra']=ra::paginate(5);
+        $Data['rra']=ra::where('deleted',0)->paginate(5);
         return view('rra.index',$Data);
     }
 
@@ -64,7 +64,8 @@ class RaController extends Controller
 
     public function destroy($id){
 
-        ra::destroy($id);
+        $valor = ra::where('id',$id);
+        $valor -> increment('deleted');
 
         return redirect('rra')->with('Message','rra deleted');
     }
