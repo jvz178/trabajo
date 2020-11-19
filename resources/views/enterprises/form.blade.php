@@ -10,6 +10,6 @@
 <input type="email" class="form-control" name="email" id="email" value="{{ isset($enterprise->email)?$enterprise->email:old('email')}}">
 </div>
 
-<input type="submit" value="{{$Mode=='create' ? 'Add':'Modify'}}" class="btn btn-success"></input>
+<input type="submit" value="{{$Mode=='create' ? 'Add enterprise':'Modify enterprise'}}" class="btn btn-success"></input>
 
 <a class="btn btn-primary" href="{{ url('/enterprises')}}">Return</a>

@@ -25,7 +25,7 @@
 <input type="text"  class="form-control" name="mark" id="mark" value="{{ isset($cce->mark)?$cce->mark:old('mark')}}"></input>
 </div>
 
-<input type="submit" value="{{$Type=='create' ? 'Add':'Modify'}}" class="btn btn-success"></input>
+<input type="submit" value="{{$Type=='create' ? 'Add cce':'Modify cce'}}" class="btn btn-success"></input>
 
 <a class="btn btn-primary" href="{{ url('/cce')}}">Return</a>
 

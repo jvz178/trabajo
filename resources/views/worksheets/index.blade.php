@@ -5,7 +5,8 @@
 <div class="container">
 <table class="table table-light">
 <thread class="thread-light">
-<a href="{{ url('worksheets/create')}}" class="btn btn-success">Create</a>
+<a href="{{ url('worksheets/create')}}" class="btn btn-success">New worksheet</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/>
 <br/>
 <th>Id</th>

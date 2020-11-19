@@ -13,5 +13,5 @@
 <input type="foreign" class="form-control" name="student_id" id="student_id" value="{{ isset($worksheet->student_id)?$worksheet->student_id:''}}">
 <br/>
 <br/>
-<input class="btn btn-success" type="submit" value="{{$Mode=='create' ? 'Add':'Modify'}}"></input>
+<input class="btn btn-success" type="submit" value="{{$Mode=='create' ? 'Add worksheet':'Modify worksheet'}}"></input>
 <a class="btn btn-primary" href="{{ url('worksheets')}}">Return</a>

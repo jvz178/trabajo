@@ -15,7 +15,7 @@
 <input type="number"  class="form-control" name="year" id="year" value="{{ isset($cycle->year)?$cycle->year:old('year')}}"></input>
 </div>
 
-<input type="submit" value="Modify" class="btn btn-success"></input>
+<input type="submit" value="{{$Mode=='create' ? 'Add cycles':'Modify cycles'}}" class="btn btn-success"></input>
 <a class="btn btn-primary" href="{{ url('/cycles')}}">Return</a>
 
 </div>

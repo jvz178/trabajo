@@ -5,6 +5,7 @@
 <div class="container">
 
 <a href="{{ url('/cce/create')}}" class="btn btn-success">Add Cce</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/><br/>
 
 <table class="table table-light table-hover">

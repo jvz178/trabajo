@@ -13,6 +13,7 @@
 @endif
 
 <a href="{{ url('/assistances/create')}}" class="btn btn-success">Add Assistance</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/><br/>
 
 <table class="table table-light">

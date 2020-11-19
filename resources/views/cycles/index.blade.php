@@ -13,6 +13,7 @@
 @endif
 
 <a href="{{ url('/cycles/create')}}" class="btn btn-success">Add Cycle</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/><br/>
 
 <table class="table table-light table-hover">
