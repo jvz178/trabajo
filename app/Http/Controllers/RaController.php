@@ -36,7 +36,7 @@ class RaController extends Controller
 
         ra::insert($rraData);
 
-        return redirect('rra')->with('Message','rra added');
+        return redirect('rra')->with('Message','ra added');
     }
 
     public function update(Request $request, $id){
@@ -59,7 +59,7 @@ class RaController extends Controller
 
         // return redirect('rra');
 
-        return redirect('rra')->with('Message','rra modified');
+        return redirect('rra')->with('Message','ra modified');
     }
 
     public function destroy($id){
