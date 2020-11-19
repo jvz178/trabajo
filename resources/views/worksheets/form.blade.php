@@ -17,5 +17,5 @@
 <input type="boolean" class="form-control" name="accepted" id="accepted" value="{{ isset($worksheet->accepted)?$worksheet->accepted:''}}">
 <br/>
 <br/>
-<input class="btn btn-success" type="submit" value="Modify">
+<input class="btn btn-success" type="submit" value="{{$Mode=='create' ? 'Add':'Modify'}}"></input>
 <a class="btn btn-primary" href="{{ url('worksheets')}}">Return</a>
