@@ -28,7 +28,7 @@
 <tbody>
 @foreach($assistances as $assistance)
 <tr>
-<td>{{$user->id}}</td>
+<td>{{$assistance->id}}</td>
 <td>{{$assistance->student_id}}</td>
 <td>{{$assistance->date}}</td>
 <td>{{$assistance->assistance}}</td>
