@@ -10,7 +10,7 @@
 <table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Word</th>
             <th>Description</th>
         </tr>
