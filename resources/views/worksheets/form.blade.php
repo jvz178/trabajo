@@ -2,19 +2,19 @@
 <br/>
 <br/>
 <label for="date">Fecha: </label>
-<input type="date" name="date" id="date" value="{{ isset($worksheet->date)?$worksheet->date:''}}">
+<input type="date" class="form-control" name="date" id="date" value="{{ isset($worksheet->date)?$worksheet->date:''}}">
 <br/>
 <br/>
 <label for="description">Descripción: </label>
-<input type="text" name="description" id="description" value="{{ isset($worksheet->description)?$worksheet->description:''}}">
+<input type="text" class="form-control" name="description" id="description" value="{{ isset($worksheet->description)?$worksheet->description:''}}">
 <br/>
 <br/>
 <label for="student_id">Id_estudiante: </label>
-<input type="foreign" name="student_id" id="student_id" value="{{ isset($worksheet->student_id)?$worksheet->student_id:''}}">
+<input type="foreign" class="form-control" name="student_id" id="student_id" value="{{ isset($worksheet->student_id)?$worksheet->student_id:''}}">
 <br/>
 <br/>
 <label for="accepted">Aceptado: </label>
-<input type="boolean" name="accepted" id="accepted" value="{{ isset($worksheet->accepted)?$worksheet->accepted:''}}">
+<input type="boolean" class="form-control" name="accepted" id="accepted" value="{{ isset($worksheet->accepted)?$worksheet->accepted:''}}">
 <br/>
 <br/>
 <input class="btn btn-success" type="submit" value="Modify">

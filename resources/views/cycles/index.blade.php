@@ -18,7 +18,7 @@
 <table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>
-            <th>#</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Grade</th>
             <th>Year</th>

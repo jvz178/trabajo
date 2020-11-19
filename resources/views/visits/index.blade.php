@@ -21,8 +21,10 @@ Visits
     @foreach($visits as $visit)
         <tr>
             <td>{{$visit->id}}</td>
-            <td>{{$visit->student_id}}</td>
-            <td>{{$visit->cycle_id}}</td>
+            <td>{{$visit->tracing_id}}</td>
+            <td>{{$visit->enterprise_id}}</td>
+            <td>{{$visit->date}}</td>
+            <td>{{$visit->kms}}</td>
         </tr>
     @endforeach
     </tbody>
