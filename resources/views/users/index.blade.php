@@ -21,6 +21,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            
             <th>Firstname</th>
             <th>Phone</th>
             
@@ -37,6 +38,7 @@
         <tr></tr>
         <td>{{$user->id}}</td> 
         <td>{{$user->name}}</td>
+        
         <td>{{$user->firstname}}</td>
         <td>{{$user->phone}}</td>
         <td>{{$user->email}}</td>
