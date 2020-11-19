@@ -63,9 +63,9 @@
     <div class="form-group">
         <label for="user" >Type:</label> 
             <select id="user" class="form-control" name="user">
-                <option>Al</option>
-                <option>tut_c</option>
-                <option>tut_e</option>
+                <option value="al">Student</option>
+                <option value="tut_e">Tutor Enterprise</option>
+                <option value="tut_c">Tutor Educational</option>
             </select>
     </div>
 
