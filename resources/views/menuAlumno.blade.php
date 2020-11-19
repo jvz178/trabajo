@@ -7,12 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Welcome, student</div>
                 <div class="panel-body">
-                <a href="{{ url('worksheets')}}">
-                <button>Monitoring sheet</button>
-                </a>
-                <a href="{{ url('assistances')}}">
-                <button>Assistance</button>
-                </a>
+                <a href="{{ url('worksheets')}}" class="btn btn-primary">Monitoring sheet</a>
+                <a href="{{ url('assistances')}}" class="btn btn-danger">Assistance</a>
                 </div>
             </div>
         </div>
