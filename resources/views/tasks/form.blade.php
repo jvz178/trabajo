@@ -15,5 +15,5 @@
 </div>
 
 
-<input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'New task':'Modify task'}}">
+<input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Add task':'Modify task'}}">
     <a class="btn btn-primary" href="{{url('tasks')}}">Back</a>

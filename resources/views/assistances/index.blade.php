@@ -13,22 +13,23 @@
 @endif
 
 <a href="{{ url('/assistances/create')}}" class="btn btn-success">Add Assistance</a>
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/><br/>
 
 <table class="table table-light">
 <thread class="thread-light">
 <tr>
 <th>Id</th>
-<th>Id_estudiante</th>
-<th>Fecha</th>
-<th>Asistencia</th>
+<th>Student_Id</th>
+<th>Date</th>
+<th>Assistance</th>
 <th></th>
 </tr>
 </thread>
 <tbody>
 @foreach($assistances as $assistance)
 <tr>
-<td>{{$user->id}}</td>
+<td>{{$assistance->id}}</td>
 <td>{{$assistance->student_id}}</td>
 <td>{{$assistance->date}}</td>
 <td>{{$assistance->assistance}}</td>

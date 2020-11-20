@@ -11,7 +11,11 @@
 @endif
 
 <a href="{{ url('users/create')}}"class="btn btn-success">New user</a>
+<<<<<<< HEAD
 <a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
+=======
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+>>>>>>> ac794aad904f02917879f0dbefea7717b7b210b8
 <br/>
 <br/>
 
@@ -33,7 +37,7 @@
         </tr>
     </thead>
 
-    <body>
+    <tbody>
     @foreach ($users as $user)
         <tr></tr>
         <td>{{$user->id}}</td> 
@@ -55,12 +59,12 @@
         <form method="post" action="{{url('/users/'.$user->id)}}" style="display:inline">
         {{csrf_field()}}
         {{method_field('DELETE')}}
-        <button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Delete</button>
+        <button class="btn btn-danger" type="submit" onclick="return confirm('¿Delete?');">Delete</button>
         </form>
         </td>
         </tr>
     @endforeach
-    </body>
+    </tbody>
 </table>
 
 {{ $users->links() }}

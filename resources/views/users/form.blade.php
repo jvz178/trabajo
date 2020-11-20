@@ -25,8 +25,8 @@
 
     <div class="form-group">
         <label for="password" class="control-label">Password: </label>
-        <input type="text" class="form-control {{$errors->has('Password')?'is-invalid':''}} " name="password" id="password" 
-        value="{{ isset($users->password)?$users->password:old('Password')}}">
+        <input type="password" class="form-control {{$errors->has('Password')?'is-invalid':''}} " name="password" id="password" 
+        value="">
         {!! $errors->first('password','<div class="invalid-feedback">:message</div>')!!}
     </div>
 
@@ -71,5 +71,5 @@
 
 
     
-    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'New user':'Modify user'}}">
+    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Add user':'Modify user'}}">
     <a class="btn btn-primary" href="{{url('users')}}">Back</a>

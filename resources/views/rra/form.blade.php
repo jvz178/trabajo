@@ -15,7 +15,7 @@
 <input type="number"  class="form-control" name="module_id" id="module_id" value="{{ isset($rra->module_id)?$rra->module_id:old('module_id')}}"></input>
 </div>
 
-<input type="submit" value="{{$Type=='create' ? 'Add':'Modify'}}" class="btn btn-success"></input>
+<input type="submit" value="{{$Type=='create' ? 'Add ra':'Modify ra'}}" class="btn btn-success"></input>
 
 <a class="btn btn-primary" href="{{ url('/rra')}}">Return</a>
 
