@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Gestión FP Dual</title> <!--{{ config('app.name', 'Laravel') }}-->
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,8 +30,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Gestión FP Dual
                     </a>
+                    <!--{{ config('app.name', 'Laravel') }}-->
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
