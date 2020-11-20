@@ -12,4 +12,4 @@
 
 <input type="submit" value="{{$Mode=='create' ? 'Add':'Modify'}}" class="btn btn-success"></input>
 
-<a class="btn btn-primary" href="{{ url('/enterprises')}}">Return</a>
+<a class="btn btn-primary" href="{{ url('/enterprises')}}">Back</a>

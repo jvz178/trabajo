@@ -11,7 +11,7 @@
 @endif
 
 <a href="{{ url('users/create')}}"class="btn btn-success">New user</a>
-<a href="{{ url('home')}}"class="btn btn-success">Volver a menú</a>
+<a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
 <br/>
 <br/>
 

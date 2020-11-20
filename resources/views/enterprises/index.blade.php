@@ -14,6 +14,7 @@
 <a href="{{ url('enterprises/create')}}" class="btn btn-success">
 Create
 </a>
+<a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
 <br/><br/>
 <table class="table table-light">
 <thread class="thread-light">
