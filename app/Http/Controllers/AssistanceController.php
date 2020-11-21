@@ -64,9 +64,4 @@ class AssistanceController extends Controller
         //$assitance= assistance::findOrFail($id);
         return redirect('assistances')->with('Message', 'Assistance modified');
     }
-
-    public function goBackMenu($type){
-        $user= user::findOrFail($type);
-        dd($type);
-    }
 }
