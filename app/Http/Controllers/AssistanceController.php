@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\assistance;
+use App\user;
 
 class AssistanceController extends Controller
 {
@@ -62,5 +63,10 @@ class AssistanceController extends Controller
         assistance::where('id','=', $id)->update($assistanceData);
         //$assitance= assistance::findOrFail($id);
         return redirect('assistances')->with('Message', 'Assistance modified');
+    }
+
+    public function goBackMenu($type){
+        $user= user::findOrFail($type);
+        dd($type);
     }
 }
