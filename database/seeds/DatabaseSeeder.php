@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         factory(\App\ra::class, 20)->create();
         factory(\App\ce::class, 20)->create();
         factory(\App\user::class, 50)->create();
+        factory(\App\user::class)->create(['email'=>'admin@admin.com','password'=> bcrypt('123456'),'type'=>'admin']);
         factory(\App\tracing::class, 30)->create();
         factory(\App\study::class, 30)->create();
         factory(\App\task_done::class, 20)->create();
