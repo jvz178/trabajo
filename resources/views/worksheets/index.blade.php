@@ -4,10 +4,10 @@
 
 <div class="container">
 
-@if(Session::has('Mensaje'))
+@if(Session::has('Message'))
 
     <div class="alert alert-success" role="alert">
-{{  Session::get('Mensaje')  }}
+{{  Session::get('Message')  }}
 </div>
 @endif
 

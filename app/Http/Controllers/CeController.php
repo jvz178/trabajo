@@ -25,6 +25,9 @@ class CeController extends Controller
         $data=[
             'word'=>'required|string|max:100',
             'description'=>'required|string|max:200',
+            'ra_id'=>'required|integer',
+            'task_id'=>'required|integer',
+            'mark'=>'required|integer'
         ];
 
         $Message=["required"=>':attribute is required'];
@@ -35,7 +38,7 @@ class CeController extends Controller
 
         ce::insert($cceData);
 
-        return redirect('cce')->with('Message','cce added');
+        return redirect('cce')->with('Message','Cce added');
     }
 
     public function update(Request $request, $id){
@@ -43,6 +46,9 @@ class CeController extends Controller
         $data=[
             'word'=>'required|string|max:100',
             'description'=>'required|string|max:200',
+            'ra_id'=>'required|integer',
+            'task_id'=>'required|integer',
+            'mark'=>'required|integer'
         ];
 
         $Message=["required"=>':attribute is required'];
@@ -57,7 +63,7 @@ class CeController extends Controller
 
         // return redirect('cce');
 
-        return redirect('cce')->with('Message','cce modified');
+        return redirect('cce')->with('Message','Cce modified');
     }
 
     public function destroy($id){
@@ -65,6 +71,6 @@ class CeController extends Controller
         $valor = ce::where('id',$id);
         $valor -> increment('deleted');
 
-        return redirect('cce')->with('Message','cce deleted');
+        return redirect('cce')->with('Message','Cce deleted');
     }
 }

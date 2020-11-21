@@ -47,9 +47,6 @@ class EnterpriseController extends Controller
     }
 
     public function update(Request $request, $id){
-        $enterpriseData=request()->except(['_token','_method']);
-        Enterprise::where('id','=', $id)->update($enterpriseData);
-        //$enterprise= Enterprise::findOrFail($id);
 
         $data=[
             'name'=>'required|string|max:100',

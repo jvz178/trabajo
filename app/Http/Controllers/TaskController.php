@@ -44,6 +44,14 @@ class TaskController extends Controller
         //
     }
     public function update(Request $request, $id){
+
+        $campos=[
+            'number'=>'required|integer|max:20',
+            'description'=>'required|string|max:1000',
+        ];
+   
+        $Mensaje=["required"=>'The :attribute ir required'];
+        $this->validate($request,$campos,$Mensaje);
         
         $datosTasks=request()->except(['_token', '_method']);
         Task::where('id', '=', $id)->update($datosTasks);

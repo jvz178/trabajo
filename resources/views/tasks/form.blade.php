@@ -1,5 +1,3 @@
-{{$Modo=='create' ? 'New task':'Modify task'}}
-
 <div class="form-group">
     <label for="number">Number: </label>
     <input type="text" class="form-control {{$errors->has('Number')?'is-invalid':''}} " name="number" id="number" 

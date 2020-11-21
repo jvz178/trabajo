@@ -4,11 +4,13 @@
 
 <div class="container">
 
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
-
 <div class="alert alert-success" role="alert">
 Visits
 </div>
+
+<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+
+
 <table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>

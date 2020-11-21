@@ -5,9 +5,11 @@
 @section('content')
 <div class="container">
 
-@if(Session::has('Mensaje')){{
- Session::get('Mensaje')
-}}
+@if(Session::has('Mensaje'))
+
+    <div class="alert alert-success" role="alert">
+{{  Session::get('Mensaje')  }}
+</div>
 @endif
 
 <a href="{{ url('users/create')}}"class="btn btn-success">New user</a>

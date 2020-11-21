@@ -19,9 +19,6 @@
 
     @include('users.form',['Modo'=>'create'])
 
-
-    
 </form>
 </div>
-
 @endsection

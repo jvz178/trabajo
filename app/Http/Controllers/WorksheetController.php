@@ -32,12 +32,12 @@ class WorksheetController extends Controller
             'student_id' => 'required|integer',
         ];
 
-        $Mensaje=["required"=>'The :attribute is required'];
-        $this->validate($request,$campos,$Mensaje);
+        $Message=["required"=>'The :attribute is required'];
+        $this->validate($request,$campos,$Message);
 
         $data=request()->except('_token');
         worksheet::insert($data);
-        return redirect('worksheets')->with('Mensaje', 'Worksheet created');
+        return redirect('worksheets')->with('Message', 'Worksheet created');
     }
 
     public function destroy($id){
@@ -49,9 +49,18 @@ class WorksheetController extends Controller
 
     public function update(Request $request, $id){
 
+        $campos=[
+            'date' => 'required|date',
+            'description' => 'required|string',
+            'student_id' => 'required|integer',
+        ];
+
+        $Message=["required"=>'The :attribute is required'];
+        $this->validate($request,$campos,$Message);
+
         $data=request()->except(['_token','_method']);
         Worksheet::where('id','=', $id)->update($data);
         //$worksheet= Worksheets::findOrFail($id);
-        return redirect('worksheets')->with('Mensaje', 'Worksheet modified');
+        return redirect('worksheets')->with('Message', 'Worksheet modified');
     }
 }
