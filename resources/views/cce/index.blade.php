@@ -4,6 +4,14 @@
 
 <div class="container">
 
+@if(Session::has('Message'))
+
+<div class="alert alert-success" role="alert">
+{{  Session::get('Message')  }}
+</div>
+
+@endif
+
 <a href="{{ url('/cce/create')}}" class="btn btn-success">Add Cce</a>
 <a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
 <br/><br/>

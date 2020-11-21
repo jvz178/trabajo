@@ -26,14 +26,14 @@ public function store(Request $request){
          'name'=>'required|string|max:20',
          'firstname'=>'required|string|max:50',
          'phone'=>'required|string|max:20',
+         'password'=>'required|string|max:50',
          'email'=>'required|string|max:50',
-         'email_verified_at'=>'required|string|max:50',
-         'password'=>'required|string|max:10',
+         'email_verified_at'=>'required|string|max:10',
          'type'=>'required|string|max:5',
      ];
 
-     $Mensaje=['required'=>'El :attribute es requerido'];
-     $this->validate($request,$campos,$Mensaje);
+    $Message=['required'=>':attribute is required'];
+    $this->validate($request,$campos,$Message);
      
 
 
@@ -51,7 +51,7 @@ public function store(Request $request){
 
      user::insert($datos);
       
-     return redirect('users')->with('Mensaje', 'User created');
+     return redirect('users')->with('Message', 'User created');
 }
 
 public function edit($id){
@@ -61,25 +61,34 @@ public function edit($id){
     //
 }
 public function update(Request $request, $id){
+
+    $campos=[
+        'name'=>'required|string|max:50',
+        'firstname'=>'required|string|max:50',
+        'phone'=>'required|string|max:20',
+        'password'=>'required|string|min:6',
+        'email'=>'required|string',
+        'email_verified_at'=>'required|string',
+        'type'=>'required|string|max:5',
+    ];
+
+   $Message=['required'=>':attribute is required'];
+   $this->validate($request,$campos,$Message);
+
+   $datosUsers=request()->except(['_token', '_method']);
+
+   $datos=[
+    'name'=>$datosUsers['name'],
+    'firstname'=>$datosUsers['firstname'],
+    'phone'=>$datosUsers['phone'],
+    'email'=>$datosUsers['email'],
+    'email_verified_at'=>$datosUsers['email_verified_at'],
+    'password'=> bcrypt($datosUsers['password']),
+    'type'=>$datosUsers['type'],
+    ];
     
-    $datosUsers=request()->except(['_token', '_method']);
-<<<<<<< HEAD
-    User::where('id', '=', $id)->update($datosUsers);
-=======
-    $datos=[
-        'name'=>$datosUsers['name'],
-        'firstname'=>$datosUsers['firstname'],
-        'phone'=>$datosUsers['phone'],
-        'email'=>$datosUsers['email'],
-        'email_verified_at'=>$datosUsers['email_verified_at'],
-        'password'=> bcrypt($datosUsers['password']),
-        'type'=>$datosUsers['type'],
-     ];
     User::where('id', '=', $id)->update($datos);
-    //  $student=Student::findOrFail($id);
-    //  return view('student.edit', compact('student'));
->>>>>>> ac794aad904f02917879f0dbefea7717b7b210b8
-     return redirect ('users')->with('Mensaje', 'User modified');
+    return redirect ('users')->with('Message', 'User modified');
 
 }
 public function destroy($id){

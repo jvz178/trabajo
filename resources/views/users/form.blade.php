@@ -1,5 +1,4 @@
-    {{$Modo=='create' ? 'New user':'Modify user'}}
-    
+   
     <div class="form-group">
         <label for="name">Name: </label>
         <input type="text" class="form-control {{$errors->has('Nombre')?'is-invalid':''}} " name="name" id="name" 

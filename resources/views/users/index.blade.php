@@ -5,17 +5,15 @@
 @section('content')
 <div class="container">
 
-@if(Session::has('Mensaje')){{
- Session::get('Mensaje')
-}}
+@if(Session::has('Mensaje'))
+
+    <div class="alert alert-success" role="alert">
+{{  Session::get('Mensaje')  }}
+</div>
 @endif
 
 <a href="{{ url('users/create')}}"class="btn btn-success">New user</a>
-<<<<<<< HEAD
 <a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
-=======
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
->>>>>>> ac794aad904f02917879f0dbefea7717b7b210b8
 <br/>
 <br/>
 
