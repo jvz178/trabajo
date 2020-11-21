@@ -8,7 +8,7 @@
 Visits
 </div>
 
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+
 
 
 <table class="table table-light table-hover">
