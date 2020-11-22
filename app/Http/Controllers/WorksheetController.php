@@ -52,7 +52,7 @@ class WorksheetController extends Controller
 
         $valor = Worksheet::where('id',$id);
         $valor -> increment('deleted');
-        return redirect('worksheets');
+        return redirect('worksheets')->with('Message', 'Worksheet deleted');
     }
 
     public function update(Request $request, $id){
