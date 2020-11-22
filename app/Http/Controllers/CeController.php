@@ -4,12 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ce;
+use DB;
 
 class CeController extends Controller
 {
     public function index(){
-        $Data['cce']=ce::where('deleted',0)->paginate(5);
-        return view('cce.index',$Data);
+
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['cce']=ce::where('deleted',0)->paginate(30);
+            return view('cce.index',$data2);
+        }else{
+        
+        $id=auth()->user()->cycle_id;
+
+        $data= DB::select('SELECT cs.id, cs.word, cs.description FROM ces cs, ras r, modules m, cycles c WHERE cs.ra_id = r.id AND m.id = r.module_id AND m.cycle_id = c.id AND c.id= ? ORDER BY r.id', [$id]);
+
+        return view('cce.index',['cce'=>$data]);
+        }
     }
 
     public function create(){

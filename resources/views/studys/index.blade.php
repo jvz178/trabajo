@@ -8,8 +8,9 @@
 Studies
 </div>
 
+<a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
 
-
+<br></br>
 
 <table class="table table-light table-hover">
     <thead class="thead-light">

@@ -54,7 +54,5 @@
     </tbody>
 </table>
 
-{{ $rra->links() }}
-
 </div>
 @endsection

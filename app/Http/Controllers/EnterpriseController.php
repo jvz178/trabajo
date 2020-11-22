@@ -10,6 +10,8 @@ class EnterpriseController extends Controller
 {
     
     public function index(){
+
+        
         $data['enterprises']=Enterprise::where('deleted',0)->paginate(5);
         return view('enterprises.index',$data);
     }

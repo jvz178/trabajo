@@ -4,13 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\task;
+use DB;
 
 class TaskController extends Controller
 {
     public function index(){
-    
-        $campos['tasks']=task::where('deleted',0)->paginate(5);
-        return view('tasks.index', $campos);
+        
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['tasks']=task::where('deleted',0)->paginate(30);
+            return view('tasks.index',$data2);
+        }else{
+
+        $id=auth()->user()->cycle_id;
+
+        $data= DB::select('SELECT t.id, t.number, t.description FROM tasks t, ces cs, ras r, modules m, cycles c WHERE t.id = cs.task_id AND cs.ra_id = r.id AND m.id = r.module_id AND m.cycle_id = c.id AND c.id= ? ORDER BY r.id', [$id]);
+
+        return view('tasks.index',['tasks'=>$data]);
+        }
     }
     
     public function create(){

@@ -52,7 +52,5 @@
     </tbody>
 </table>
 
-{{ $cce->links() }}
-
 </div>
 @endsection

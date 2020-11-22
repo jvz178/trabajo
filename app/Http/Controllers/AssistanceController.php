@@ -8,10 +8,19 @@ use App\user;
 
 class AssistanceController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        $data['assistances']=assistance::where('deleted',0)->paginate(5);
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['assistances']=assistance::where('deleted',0)->paginate(5);
+            return view('assistances.index',$data2);
+        }else{
+
+        $data['assistances']=assistance::where('deleted',0)->where('student_id',$id)
+        ->paginate(5);
         return view('assistances.index',$data);
+        }
     }
 
     public function create(){
