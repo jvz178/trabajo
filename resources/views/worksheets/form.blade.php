@@ -22,5 +22,5 @@ value="{{ isset($worksheet->student_id)?$worksheet->student_id:''}}">
 </div>
 <br/>
 <br/>
-<input class="btn btn-success" type="submit" value="{{$Mode=='create' ? 'Add worksheet':'Modify worksheet'}}"></input>
+<input class="btn btn-success" type="submit" value="{{$Mode=='create' ? 'Add worksheet':'Modify worksheet'}}">
 <a class="btn btn-primary" href="{{ url('worksheets')}}">Return</a>

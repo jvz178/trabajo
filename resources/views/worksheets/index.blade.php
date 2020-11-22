@@ -25,7 +25,7 @@
 </thread>
 <tbody>
 @foreach($worksheets as $worksheet)
-<tr>
+</tr>
 <td>{{$worksheet->id}}</td>
 <td>{{$worksheet->date}}</td>
 <td>{{$worksheet->description}}</td>

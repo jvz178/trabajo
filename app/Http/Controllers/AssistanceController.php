@@ -41,7 +41,7 @@ class AssistanceController extends Controller
             'assistance'=>'required|string|max:20',
         ];
    
-        $Message=['required'=>':attribute is required'];
+        $Message=["required"=>':attribute is required'];
         $this->validate($request,$campos,$Message);
 
         $request->merge(['student_id'=>auth()->user()->id]);
