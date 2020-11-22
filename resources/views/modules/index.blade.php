@@ -10,7 +10,7 @@
 @endif
 
 <a href="{{ url('modules/create')}}"class="btn btn-success">New module</a>
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+
 <br/>
 <br/>
 

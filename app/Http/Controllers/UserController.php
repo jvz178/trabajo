@@ -87,8 +87,9 @@ public function update(Request $request, $id){
     'type'=>$datosUsers['type'],
     ];
     
-    User::where('id', '=', $id)->update($datos);
-    return redirect ('users')->with('Message', 'User modified');
+    $datosUsers=request()->except(['_token', '_method']);
+    User::where('id', '=', $id)->update($datosUsers);
+     return redirect ('users')->with('Mensaje', 'User modified');
 
 }
 public function destroy($id){

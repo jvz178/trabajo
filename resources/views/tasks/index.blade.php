@@ -11,7 +11,7 @@
 @endif
 
 <a href="{{ url('tasks/create')}}"class="btn btn-success">New task</a>
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+
 <br/>
 <br/>
 

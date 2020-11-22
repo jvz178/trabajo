@@ -13,7 +13,7 @@
 @endif
 
 <a href="{{ url('/rra/create')}}" class="btn btn-success">New ra</a>
-<a href="{{ url('home')}}"class="btn btn-success">Go Back to Menu</a>
+
 <br/><br/>
 
 <table class="table table-light table-hover">
