@@ -40,6 +40,7 @@ class WorksheetController extends Controller
             'student_id' => 'required|integer',
         ];
 
+        $request->merge(['student_id'=>auth()->user()->id]);
         $Message=["required"=>'The :attribute is required'];
         $this->validate($request,$campos,$Message);
 
