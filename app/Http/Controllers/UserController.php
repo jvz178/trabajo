@@ -28,7 +28,7 @@ public function store(Request $request){
          'phone'=>'required|string|max:20',
          'password'=>'required|string|max:50',
          'email'=>'required|string|max:50',
-         'email_verified_at'=>'required|string|max:10',
+         'email_verified_at'=>'required|string|max:50',
          'type'=>'required|string|max:5',
      ];
 
