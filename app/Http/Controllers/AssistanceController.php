@@ -37,7 +37,6 @@ class AssistanceController extends Controller
     public function store(Request $request){
 
         $campos=[
-            'student_id'=>'required|integer',
             'date'=>'required|date',
             'assistance'=>'required|string|max:20',
         ];
@@ -45,6 +44,7 @@ class AssistanceController extends Controller
         $Message=['required'=>':attribute is required'];
         $this->validate($request,$campos,$Message);
 
+        $request->merge(['student_id'=>auth()->user()->id]);
         $assistanceData=request()->except('_token');
         assistance::insert($assistanceData);
         return redirect('assistances')->with('Message', 'Assistance created');;
@@ -60,7 +60,6 @@ class AssistanceController extends Controller
     public function update(Request $request, $id){
 
         $campos=[
-            'student_id'=>'required|integer',
             'date'=>'required|date',
             'assistance'=>'required|string',
         ];

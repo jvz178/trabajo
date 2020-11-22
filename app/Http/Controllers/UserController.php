@@ -66,8 +66,8 @@ public function update(Request $request, $id){
         'firstname'=>'required|string|max:50',
         'phone'=>'required|string|max:20',
         'password'=>'required|string|min:6',
-        'email'=>'required|string',
-        'email_verified_at'=>'required|string',
+        'email'=>'required|string|max:50',
+        'email_verified_at'=>'required|string|max:50',
         'type'=>'required|string|max:5',
     ];
 

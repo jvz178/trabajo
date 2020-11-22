@@ -1,4 +1,3 @@
-
 <div class="form-group">
 <label for="date">Date: </label>
 <input type="date" class="form-control" name="date" id="date"
