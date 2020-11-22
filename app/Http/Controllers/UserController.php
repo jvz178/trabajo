@@ -70,6 +70,7 @@ public function update(Request $request, $id){
         'email_verified_at'=>'required|string|max:50',
         'type'=>'required|string|max:5',
     ];
+    
 
    $Message=['required'=>':attribute is required'];
    $this->validate($request,$campos,$Message);
