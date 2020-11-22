@@ -89,14 +89,14 @@ public function update(Request $request, $id){
     
     $datosUsers=request()->except(['_token', '_method']);
     User::where('id', '=', $id)->update($datosUsers);
-     return redirect ('users')->with('Mensaje', 'User modified');
+     return redirect ('users')->with('Message', 'User modified');
 
 }
 public function destroy($id){
     
     $valor = user::where('id',$id);
     $valor -> increment('deleted');
-    return redirect('users')->with('Mensaje', 'User deleted');
+    return redirect('users')->with('Message', 'User deleted');
 }
 
 
