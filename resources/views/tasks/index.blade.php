@@ -36,7 +36,7 @@
         <a class="btn btn-warning" href="{{url('/tasks/'.$task->id.'/edit')}}" >
             Edit 
         </a>
-        |
+        
         <form method="post" action="{{url('/tasks/'.$task->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}

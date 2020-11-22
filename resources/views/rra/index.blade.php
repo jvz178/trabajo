@@ -37,9 +37,6 @@
                 <a class="btn btn-warning" href="{{ url('/rra/' .$ra->id. '/edit/') }}">
                     Edit
                 </a> 
-                </br>
-                --------
-                </br>
                 <form method="post" action="{{ url('/rra/' .$ra->id) }}" style="display:inline">
                 {{csrf_field() }}
                 {{ method_field('DELETE') }}
