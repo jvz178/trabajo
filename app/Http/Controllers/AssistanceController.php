@@ -8,10 +8,19 @@ use App\user;
 
 class AssistanceController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
 
-        $data['assistances']=assistance::where('deleted',0)->paginate(5);
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['assistances']=assistance::where('deleted',0)->paginate(5);
+            return view('assistances.index',$data2);
+        }else{
+
+        $data['assistances']=assistance::where('deleted',0)->where('student_id',$id)
+        ->paginate(5);
         return view('assistances.index',$data);
+        }
     }
 
     public function create(){
@@ -28,14 +37,14 @@ class AssistanceController extends Controller
     public function store(Request $request){
 
         $campos=[
-            'student_id'=>'required|integer',
             'date'=>'required|date',
             'assistance'=>'required|string|max:20',
         ];
    
-        $Message=['required'=>':attribute is required'];
+        $Message=["required"=>':attribute is required'];
         $this->validate($request,$campos,$Message);
 
+        $request->merge(['student_id'=>auth()->user()->id]);
         $assistanceData=request()->except('_token');
         assistance::insert($assistanceData);
         return redirect('assistances')->with('Message', 'Assistance created');;
@@ -51,7 +60,6 @@ class AssistanceController extends Controller
     public function update(Request $request, $id){
 
         $campos=[
-            'student_id'=>'required|integer',
             'date'=>'required|date',
             'assistance'=>'required|string',
         ];

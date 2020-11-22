@@ -35,8 +35,8 @@
 <td>{{$assistance->assistance}}</td>
 <td>
 
-<a class="btn btn-warning" href="{{ url('/assistances/'.$assistance->id.'/edit')}}">Modify</a>
-
+<a class="btn btn-warning" href="{{ url('/assistances/'.$assistance->id.'/edit')}}">Edit</a>
+|
 <form method="post" action="{{ url('/assistances/'.$assistance->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}

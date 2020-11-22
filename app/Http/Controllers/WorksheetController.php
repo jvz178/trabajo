@@ -9,8 +9,16 @@ class WorksheetController extends Controller
 {
     public function index(){
 
-        $data['worksheets']=worksheet::where('deleted',0)->paginate(5);
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['worksheets']=worksheet::where('deleted',0)->paginate(5);
+            return view('worksheets.index',$data2);
+        }else{
+
+        $data['worksheets']=worksheet::where('deleted',0)->where('student_id',$id)->paginate(5);
         return view('worksheets.index',$data);
+        }
     }
 
     public function create(){

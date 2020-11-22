@@ -9,7 +9,6 @@ class UserController extends Controller
 {
     
 public function index(){
-    
     $campos['users']=user::where('deleted',0)->paginate(5);
     return view('users.index', $campos);
 }
@@ -28,7 +27,7 @@ public function store(Request $request){
          'phone'=>'required|string|max:20',
          'password'=>'required|string|max:50',
          'email'=>'required|string|max:50',
-         'email_verified_at'=>'required|string|max:10',
+         'email_verified_at'=>'required|string',
          'type'=>'required|string|max:5',
      ];
 
@@ -67,8 +66,8 @@ public function update(Request $request, $id){
         'firstname'=>'required|string|max:50',
         'phone'=>'required|string|max:20',
         'password'=>'required|string|min:6',
-        'email'=>'required|string',
-        'email_verified_at'=>'required|string',
+        'email'=>'required|string|max:50',
+        'email_verified_at'=>'required|string|max:50',
         'type'=>'required|string|max:5',
     ];
     

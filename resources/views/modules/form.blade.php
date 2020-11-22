@@ -14,5 +14,5 @@
 </div>
 
 
-<input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'New module':'Modify module'}}">
+<input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Add module':'Modify module'}}">
     <a class="btn btn-primary" href="{{url('modules')}}">Back</a>

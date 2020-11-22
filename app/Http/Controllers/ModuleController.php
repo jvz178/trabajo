@@ -8,9 +8,19 @@ use App\module;
 class ModuleController extends Controller
 {
     public function index(){
+
+        $id=auth()->user()->id;
+
+        if($id==51){
+            $data2['modules']=module::where('deleted',0)->paginate(30);
+            return view('modules.index',$data2);
+        }else{
+
+        $id=auth()->user()->cycle_id;
     
-        $campos['modules']=module::where('deleted',0)->paginate(5);
+        $campos['modules']=module::where('deleted',0)->where('cycle_id',$id)->paginate(5);
         return view('modules.index', $campos);
+        }
     }
     
     public function create(){

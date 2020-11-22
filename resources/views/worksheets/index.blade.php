@@ -6,14 +6,14 @@
 
 @if(Session::has('Message'))
 
-    <div class="alert alert-success" role="alert">
+<div class="alert alert-success" role="alert">
 {{  Session::get('Message')  }}
 </div>
 @endif
 
 <table class="table table-light">
 <thread class="thread-light">
-<a href="{{ url('worksheets/create')}}" class="btn btn-success">New worksheet</a>
+<a href="{{ url('worksheets/create')}}" class="btn btn-success">Add worksheet</a>
 
 <br/>
 <br/>
@@ -25,7 +25,7 @@
 </thread>
 <tbody>
 @foreach($worksheets as $worksheet)
-<tr>
+</tr>
 <td>{{$worksheet->id}}</td>
 <td>{{$worksheet->date}}</td>
 <td>{{$worksheet->description}}</td>
@@ -37,7 +37,7 @@
 <form method="post" action="{{ url('/worksheets/'.$worksheet->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}
-<button class="btn btn-danger" type="submit" onclick="return confirm('Do you want Delete?');">Delete</button>
+<button class="btn btn-danger" type="submit" onclick="return confirm('Delete?');">Delete</button>
 </form>
 </td>
 </tr>

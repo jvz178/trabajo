@@ -27,4 +27,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function scopeId($query, $id){
+        if($id)
+            return $query->where('id',$id);
+    }
+
+    public function scopeStudentId($query, $Studentid){
+        if($Studentid)
+            return $query->where('student_id',$Studentid);
+    }
+
+    public function scopeDate($query, $date){
+        if($date)
+            return $query->where('date',$date);
+    }
 }

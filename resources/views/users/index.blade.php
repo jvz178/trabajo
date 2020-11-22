@@ -12,7 +12,7 @@
 </div>
 @endif
 
-<a href="{{ url('users/create')}}"class="btn btn-success">New user</a>
+<a href="{{ url('users/create')}}"class="btn btn-success">Add user</a>
 <a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
 <br/>
 <br/>

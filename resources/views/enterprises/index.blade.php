@@ -12,7 +12,7 @@
 @endif
 
 <a href="{{ url('enterprises/create')}}" class="btn btn-success">
-Create
+Add enterprise
 </a>
 <a href="{{ url('home')}}"class="btn btn-success">Back to menu</a>
 <br/><br/>
@@ -33,8 +33,8 @@ Create
 <td>{{$enterprise->email}}</td>
 <td>
 
-<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Modify</a>
-
+<a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Edit</a>
+|
 <form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}

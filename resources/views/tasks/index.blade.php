@@ -48,7 +48,5 @@
     </body>
 </table>
 
-{{ $tasks->links() }}
-
 </div>
 @endsection

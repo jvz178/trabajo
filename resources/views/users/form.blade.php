@@ -70,5 +70,5 @@
 
 
     
-    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Add user':'Modify user'}}">
-    <a class="btn btn-primary" href="{{url('users')}}">Back</a>
+    <input type="submit" class="btn btn-success" value="{{$Modo=='create' ? 'Add user':'Modify user'}}"></input>
+    <a class="btn btn-primary" href="{{url('users')}}">Return</a>
