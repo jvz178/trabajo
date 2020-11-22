@@ -10,6 +10,6 @@
 {!! $errors->first('assistance','<div class="invalid-feedback">:message</div>')!!}
 </div>
 
-<input type="submit" value="{{$Mode=='create' ? 'Add assistances':'Modify assistances'}}" class="btn btn-success"></input>
+<input type="submit" value="{{$Mode=='create' ? 'Add assistance':'Modify assistance'}}" class="btn btn-success"></input>
 
 <a class="btn btn-primary" href="{{ url('/assistances')}}">Return</a>

@@ -16,7 +16,7 @@
 {!! $errors->first('year','<div class="invalid-feedback">:message</div>')!!}
 </div>
 
-<input type="submit" value="{{$Type=='create' ? 'Add cycles':'Modify cycles'}}" class="btn btn-success"></input>
+<input type="submit" value="{{$Type=='create' ? 'Add cycle':'Modify cycle'}}" class="btn btn-success"></input>
 <a class="btn btn-primary" href="{{ url('/cycles')}}">Return</a>
 
 </div>
