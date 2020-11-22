@@ -9,7 +9,7 @@
 </div>
 @endif
 
-<a href="{{ url('modules/create')}}"class="btn btn-success">New module</a>
+<a href="{{ url('modules/create')}}"class="btn btn-success">Add module</a>
 
 <br/>
 <br/>
@@ -36,7 +36,7 @@
         <a class="btn btn-warning" href="{{url('/modules/'.$module->id.'/edit')}}" >
             Edit 
         </a>
-        
+        |
         <form method="post" action="{{url('/modules/'.$module->id)}}" style="display:inline">
          {{csrf_field()}}
          {{method_field('DELETE')}}
