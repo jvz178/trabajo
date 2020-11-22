@@ -61,7 +61,6 @@ class WorksheetController extends Controller
         $campos=[
             'date' => 'required|date',
             'description' => 'required|string',
-            'student_id' => 'required|integer',
         ];
 
         $Message=["required"=>'The :attribute is required'];
