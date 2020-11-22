@@ -12,7 +12,7 @@
 
 @endif
 
-<a href="{{ url('/rra/create')}}" class="btn btn-success">New ra</a>
+<a href="{{ url('/rra/create')}}" class="btn btn-success">Add ra</a>
 
 <br/><br/>
 
@@ -36,11 +36,10 @@
 
                 <a class="btn btn-warning" href="{{ url('/rra/' .$ra->id. '/edit/') }}">
                     Edit
-                </a>
-
-
-                | 
-
+                </a> 
+                </br>
+                --------
+                </br>
                 <form method="post" action="{{ url('/rra/' .$ra->id) }}" style="display:inline">
                 {{csrf_field() }}
                 {{ method_field('DELETE') }}
