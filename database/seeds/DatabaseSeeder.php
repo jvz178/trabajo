@@ -11,13 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\task::class, 20)->create();
-        factory(\App\enterprise::class, 20)->create();
-        factory(\App\cycle::class, 20)->create();
-        factory(\App\module::class, 20)->create();
-        factory(\App\ra::class, 20)->create();
-        factory(\App\ce::class, 20)->create();
-        factory(\App\user::class, 50)->create();
+        factory(\App\task::class, 80)->create();
+        factory(\App\enterprise::class, 5)->create();
+        factory(\App\cycle::class, 3)->create();
+        factory(\App\module::class, 10)->create();
+        factory(\App\ra::class, 30)->create();
+        factory(\App\ce::class, 60)->create();
+        factory(\App\user::class, 30)->create();
         factory(\App\user::class)->create(['email'=>'admin@admin.com','password'=> bcrypt('123456'),'type'=>'admin']);
         factory(\App\tracing::class, 30)->create();
         factory(\App\study::class, 30)->create();
