@@ -34,7 +34,7 @@ Add enterprise
 <td>
 
 <a href="{{ url('/enterprises/'.$enterprise->id.'/edit')}}" class="btn btn-warning">Edit</a>
-|
+
 <form method="post" action="{{ url('/enterprises/'.$enterprise->id)}}" style="display:inline">
 {{csrf_field()}}
 {{method_field('DELETE')}}

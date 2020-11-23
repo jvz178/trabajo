@@ -55,6 +55,14 @@ class ModuleController extends Controller
     }
     public function update(Request $request, $id){
         
+        $campos=[
+            'name'=>'required|string|max:20',
+            'cycle_id'=>'required|integer',
+        ];
+
+        $Message=["required"=>':attribute is required'];
+        $this->validate($request,$campos,$Message);
+
         $datosModules=request()->except(['_token', '_method']);
         module::where('id', '=', $id)->update($datosModules);
        

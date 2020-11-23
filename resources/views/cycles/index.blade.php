@@ -39,7 +39,7 @@
                 </a>
 
 
-                | 
+                
 
                 <form method="post" action="{{ url('/cycles/' .$cycle->id) }}" style="display:inline">
                 {{csrf_field() }}

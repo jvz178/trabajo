@@ -40,6 +40,7 @@ class WorksheetController extends Controller
             'student_id' => 'required|integer',
         ];
 
+        $request->merge(['student_id'=>auth()->user()->id]);
         $Message=["required"=>'The :attribute is required'];
         $this->validate($request,$campos,$Message);
 
@@ -52,7 +53,7 @@ class WorksheetController extends Controller
 
         $valor = Worksheet::where('id',$id);
         $valor -> increment('deleted');
-        return redirect('worksheets');
+        return redirect('worksheets')->with('Message', 'Worksheet deleted');
     }
 
     public function update(Request $request, $id){
@@ -60,7 +61,6 @@ class WorksheetController extends Controller
         $campos=[
             'date' => 'required|date',
             'description' => 'required|string',
-            'student_id' => 'required|integer',
         ];
 
         $Message=["required"=>'The :attribute is required'];
